@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import Head from "next/head";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -48,6 +49,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        {/* For Chrome, Firefox OS, Opera and Vivaldi */}
+        <meta name="theme-color" content="#000000" />
+
+        {/* For Windows Phone */}
+        <meta name="msapplication-navbutton-color" content="#000000" />
+
+        {/* For iOS Safari */}
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+      </Head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
