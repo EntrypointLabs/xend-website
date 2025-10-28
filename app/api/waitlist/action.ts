@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { prisma } from "@/prisma/client";
+import { sendWaitlistConfirmationEmail } from "@/lib/emails/send-email";
 
 const emailSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -40,6 +41,11 @@ export async function submitWaitlist(formData: FormData) {
         email: validatedEmail,
         isWaitlistUser: true,
       },
+    });
+
+    // Send confirmation email asynchronously (non-blocking)
+    sendWaitlistConfirmationEmail(validatedEmail).catch((error) => {
+      console.error("Failed to send confirmation email:", error);
     });
 
     return {

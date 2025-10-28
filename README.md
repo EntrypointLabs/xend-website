@@ -47,9 +47,21 @@ Create a `.env.local` file in the root directory:
 
 ```bash
 DATABASE_URL="postgresql://user:password@host:5432/database?schema=public"
+DIRECT_URL="postgresql://user:password@host:5432/database"
+RESEND_API_KEY="re_your_resend_api_key"
 ```
 
-Replace the connection string with your Supabase PostgreSQL connection string from the Supabase dashboard.
+Replace:
+
+- `DATABASE_URL` with your Supabase PostgreSQL connection string with connection pooling from the Supabase dashboard
+- `DIRECT_URL` with your direct Supabase PostgreSQL connection string (for migrations)
+- `RESEND_API_KEY` with your Resend API key from https://resend.com/api-keys
+
+**Note:**
+
+- You can get your Supabase connection strings from Project Settings → Database in the Supabase dashboard
+- For Resend, sign up at https://resend.com and create an API key in the dashboard
+- By default, Resend uses `onboarding@resend.dev` as the sender (for testing). For production, verify your domain in Resend and update the "from" address in `lib/emails/send-email.ts`
 
 #### 3. Run Database Migrations
 
