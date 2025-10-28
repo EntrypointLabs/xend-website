@@ -88,27 +88,3 @@ export function MagneticButton({
           contain: "layout style paint",
         }}
       >
-        <div className="flex items-center gap-3 px-6 py-3">
-          <input
-            ref={inputRef}
-            type="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value)
-              setError("")
-            }}
-            placeholder={placeholder}
-            className="flex-1 bg-transparent font-sans text-sm text-background placeholder-background/60 outline-none"
-          />
-          <button
-            type="submit"
-            className="whitespace-nowrap rounded-full bg-background px-4 py-1.5 font-sans text-xs font-semibold text-foreground transition-all duration-300 hover:scale-105 active:scale-95"
-          >
-            Subscribe
-          </button>
-        </div>
-        {error && <p className="px-6 pb-2 font-mono text-xs text-red-400">{error}</p>}
-      </div>
-    </form>
-  )
-}

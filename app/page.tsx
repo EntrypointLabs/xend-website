@@ -2,7 +2,6 @@
 
 import type React from "react"
 
-import {ServicesSection} from "services-section.tsx"
 import Image from "next/image"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
@@ -255,7 +254,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Products", "Services"].map((item, index) => (
+          {["Home", "Products"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -302,7 +301,8 @@ export default function Home() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-60 md:pt-40 md:pb-24">
+        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-60 md:pt-40 md:pb-24"> *
+        {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
           <div className="max-w-8xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="font-mono text-xs text-foreground/90">WebGL Powered Design</p>
@@ -310,7 +310,7 @@ export default function Home() {
             <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
                 Seamless Cross-Chain Payments.
-                <br />
+                 <br />
                 Seconds, Not Hours.
               </span>
             </h1>
@@ -328,7 +328,9 @@ export default function Home() {
               >
                 Open in v0
               </MagneticButton>
-             
+              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(0)}>
+                View Demo
+              </MagneticButton>
             </div>
 
             <form
@@ -363,7 +365,7 @@ export default function Home() {
         </section>
 
         {/* Products Section */}
-        {/* <section className="flex min-h-screen w-screen shrink-0 flex-col justify-center px-6 py-24 md:px-12">
+        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-center px-6 py-24 md:px-12">
           <div className="mx-auto w-full max-w-6xl">
             <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <h2 className="font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl">
@@ -376,7 +378,7 @@ export default function Home() {
 
             <div className="grid gap-8 md:grid-cols-2">
               {/* Mobile App Card */}
-              {/* <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-100">
+              <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-100">
                 <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-foreground/5">
                   <Image
                     src="/mobile-app-interface.png"
@@ -401,7 +403,7 @@ export default function Home() {
               </div>
 
               {/* Browser Extension Card */}
-             {/* <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-200">
+              <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-200">
                 <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-foreground/5">
                   <Image
                     src="/browser-extension-interface.jpg"
@@ -426,7 +428,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
       </div>
 
       <style jsx global>{`
