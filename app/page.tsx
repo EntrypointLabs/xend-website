@@ -216,7 +216,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
+    <main className="relative h-screen w-full overflow-hidden --bg-background">
       <CustomCursor />
       <GrainOverlay />
 
@@ -254,7 +254,7 @@ export default function Home() {
             opacity={0.97}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        {/* <div className="absolute inset-0 bg-black/20" /> */}
       </div>
 
       <nav
