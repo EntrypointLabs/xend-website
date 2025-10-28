@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "https://xend.global",
-    title: "Mantis",
-    description: "Type and Trade | Mantis",
+    title: "Xend Global",
+    description: "Stablecoin powered internet | Xend Global",
     images: [
       {
         url: "https://xend.global/images/og-image.png",
