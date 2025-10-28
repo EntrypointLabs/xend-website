@@ -8,23 +8,11 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  themeColor: "#000000",
-  title: "Xend Global",
+  title: {
+    template: "%s | Xend Global",
+    default: "Stablecoin powered internet | Xend Global",
+  },
   description: "Stablecoin powered internet",
-  twitter: {
-    card: "summary_large_image",
-    title: "Xend Global",
-    description: "Stablecoin powered internet",
-    site: "https://xend.global",
-    creator: "@xend_global",
-    images: ["/images/og-image.png"],
-  },
-  openGraph: {
-    title: "Xend Global",
-    description: "Stablecoin powered internet",
-    siteName: "Xend Global",
-    images: ["/images/og-image.png"],
-  },
   keywords: [
     "Xend",
     "Xend Global",
@@ -33,7 +21,24 @@ export const metadata: Metadata = {
     "Payments",
     "Socials",
   ],
-  appLinks: {},
+  openGraph: {
+    images: "https://xend.global/images/og-image.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "https://xend.global",
+    title: "Mantis",
+    description: "Type and Trade | Mantis",
+    images: [
+      {
+        url: "https://xend.global/images/og-image.png",
+        width: 1080,
+        height: 1080,
+        alt: "Xend Global",
+      },
+    ],
+    creator: "@xend_global",
+  },
 };
 
 export default function RootLayout({
