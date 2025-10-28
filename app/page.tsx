@@ -322,7 +322,7 @@ export default function Home() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-60 md:pt-40 md:pb-24">
+        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 md:pt-40 md:pb-24">
           {" "}
           *
           {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
@@ -332,17 +332,17 @@ export default function Home() {
                 Stablecoin powered internet
               </p>
             </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
-                Seamless Cross-Chain Payments.
+                Seamless Payments on Socials.
                 <br />
                 Seconds, Not Hours.
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Move assets across blockchains instantly with low fees — no
-                bridges, no complexity, just pure interoperability.
+                Move assets across socials instantly with zero fees — no
+                complexity, just pure interoperability.
               </span>
             </p>
 
