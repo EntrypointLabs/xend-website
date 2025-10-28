@@ -1,10 +1,13 @@
-"use client"
+"use client";
 
-import { MagneticButton } from "@/components/magnetic-button"
-import { useReveal } from "@/hooks/use-reveal"
+import { useReveal } from "@/hooks/use-reveal";
 
-export function AboutSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
-  const { ref, isVisible } = useReveal(0.3)
+export function AboutSection({
+  scrollToSection,
+}: {
+  scrollToSection?: (index: number) => void;
+}) {
+  const { ref, isVisible } = useReveal(0.3);
 
   return (
     <section
@@ -17,7 +20,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           <div>
             <div
               className={`mb-6 transition-all duration-700 md:mb-12 ${
-                isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-12 opacity-0"
               }`}
             >
               <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
@@ -31,16 +36,20 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
 
             <div
               className={`space-y-3 transition-all duration-700 md:space-y-4 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
               }`}
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                We're a collective of designers, developers, and creative technologists obsessed with crafting
-                exceptional digital experiences.
+                We're a collective of designers, developers, and creative
+                technologists obsessed with crafting exceptional digital
+                experiences.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Every project is an opportunity to explore new possibilities and push creative boundaries.
+                Every project is an opportunity to explore new possibilities and
+                push creative boundaries.
               </p>
             </div>
           </div>
@@ -48,16 +57,33 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           {/* Right side - Stats with creative layout */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "150+", label: "Projects", sublabel: "Delivered worldwide", direction: "right" },
-              { value: "8", label: "Years", sublabel: "Of innovation", direction: "left" },
-              { value: "12", label: "Awards", sublabel: "Industry recognition", direction: "right" },
+              {
+                value: "150+",
+                label: "Projects",
+                sublabel: "Delivered worldwide",
+                direction: "right",
+              },
+              {
+                value: "8",
+                label: "Years",
+                sublabel: "Of innovation",
+                direction: "left",
+              },
+              {
+                value: "12",
+                label: "Awards",
+                sublabel: "Industry recognition",
+                direction: "right",
+              },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
-                  return stat.direction === "left" ? "-translate-x-16 opacity-0" : "translate-x-16 opacity-0"
+                  return stat.direction === "left"
+                    ? "-translate-x-16 opacity-0"
+                    : "translate-x-16 opacity-0";
                 }
-                return "translate-x-0 opacity-100"
-              }
+                return "translate-x-0 opacity-100";
+              };
 
               return (
                 <div
@@ -69,31 +95,23 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                     maxWidth: i % 2 === 0 ? "100%" : "85%",
                   }}
                 >
-                  <div className="text-3xl font-light text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
+                  <div className="text-3xl font-light text-foreground md:text-6xl lg:text-7xl">
+                    {stat.value}
+                  </div>
                   <div>
-                    <div className="font-sans text-base font-light text-foreground md:text-xl">{stat.label}</div>
-                    <div className="font-mono text-xs text-foreground/60">{stat.sublabel}</div>
+                    <div className="font-sans text-base font-light text-foreground md:text-xl">
+                      {stat.label}
+                    </div>
+                    <div className="font-mono text-xs text-foreground/60">
+                      {stat.sublabel}
+                    </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
-
-        <div
-          className={`mt-8 flex flex-wrap gap-3 transition-all duration-700 md:mt-16 md:gap-4 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
-          style={{ transitionDelay: "750ms" }}
-        >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Start a Project
-          </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            View Our Work
-          </MagneticButton>
-        </div>
       </div>
     </section>
-  )
+  );
 }

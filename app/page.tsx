@@ -1,196 +1,211 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Image from "next/image"
-import { Shader, ChromaFlow, Swirl } from "shaders/react"
-import { CustomCursor } from "@/components/custom-cursor"
-import { GrainOverlay } from "@/components/grain-overlay"
-import { MagneticButton } from "@/components/magnetic-button"
-import { useRef, useEffect, useState } from "react"
+import Image from "next/image";
+import { Shader, ChromaFlow, Swirl } from "shaders/react";
+import { CustomCursor } from "@/components/custom-cursor";
+import { GrainOverlay } from "@/components/grain-overlay";
+import { useRef, useEffect, useState } from "react";
+import ProductsSection from "@/components/sections/products";
+
+const navTabs: string[] = [
+  // "Home",
+  // "Products"
+];
 
 export default function Home() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [currentSection, setCurrentSection] = useState(0)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const touchStartY = useRef(0)
-  const touchStartX = useRef(0)
-  const shaderContainerRef = useRef<HTMLDivElement>(null)
-  const scrollThrottleRef = useRef<number>()
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const touchStartY = useRef(0);
+  const touchStartX = useRef(0);
+  const shaderContainerRef = useRef<HTMLDivElement>(null);
+  const scrollThrottleRef = useRef<number | undefined>(undefined);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   useEffect(() => {
     const checkShaderReady = () => {
       if (shaderContainerRef.current) {
-        const canvas = shaderContainerRef.current.querySelector("canvas")
+        const canvas = shaderContainerRef.current.querySelector("canvas");
         if (canvas && canvas.width > 0 && canvas.height > 0) {
-          setIsLoaded(true)
-          return true
+          setIsLoaded(true);
+          return true;
         }
       }
-      return false
-    }
+      return false;
+    };
 
-    if (checkShaderReady()) return
+    if (checkShaderReady()) return;
 
     const intervalId = setInterval(() => {
       if (checkShaderReady()) {
-        clearInterval(intervalId)
+        clearInterval(intervalId);
       }
-    }, 100)
+    }, 100);
 
     const fallbackTimer = setTimeout(() => {
-      setIsLoaded(true)
-    }, 1500)
+      setIsLoaded(true);
+    }, 1500);
 
     return () => {
-      clearInterval(intervalId)
-      clearTimeout(fallbackTimer)
-    }
-  }, [])
+      clearInterval(intervalId);
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
 
   const scrollToSection = (index: number) => {
     if (scrollContainerRef.current) {
-      const sectionWidth = scrollContainerRef.current.offsetWidth
+      const sectionWidth = scrollContainerRef.current.offsetWidth;
       scrollContainerRef.current.scrollTo({
         left: sectionWidth * index,
         behavior: "smooth",
-      })
-      setCurrentSection(index)
+      });
+      setCurrentSection(index);
     }
-  }
+  };
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY
-      touchStartX.current = e.touches[0].clientX
-    }
+      touchStartY.current = e.touches[0].clientY;
+      touchStartX.current = e.touches[0].clientX;
+    };
 
     const handleTouchMove = (e: TouchEvent) => {
       if (Math.abs(e.touches[0].clientY - touchStartY.current) > 10) {
-        e.preventDefault()
+        e.preventDefault();
       }
-    }
+    };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      const touchEndY = e.changedTouches[0].clientY
-      const touchEndX = e.changedTouches[0].clientX
-      const deltaY = touchStartY.current - touchEndY
-      const deltaX = touchStartX.current - touchEndX
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaY = touchStartY.current - touchEndY;
+      const deltaX = touchStartX.current - touchEndX;
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
         if (deltaY > 0 && currentSection < 1) {
-          scrollToSection(currentSection + 1)
+          scrollToSection(currentSection + 1);
         } else if (deltaY < 0 && currentSection > 0) {
-          scrollToSection(currentSection - 1)
+          scrollToSection(currentSection - 1);
         }
       }
-    }
+    };
 
-    const container = scrollContainerRef.current
+    const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener("touchstart", handleTouchStart, { passive: true })
-      container.addEventListener("touchmove", handleTouchMove, { passive: false })
-      container.addEventListener("touchend", handleTouchEnd, { passive: true })
+      container.addEventListener("touchstart", handleTouchStart, {
+        passive: true,
+      });
+      container.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+      container.addEventListener("touchend", handleTouchEnd, { passive: true });
     }
 
     return () => {
       if (container) {
-        container.removeEventListener("touchstart", handleTouchStart)
-        container.removeEventListener("touchmove", handleTouchMove)
-        container.removeEventListener("touchend", handleTouchEnd)
+        container.removeEventListener("touchstart", handleTouchStart);
+        container.removeEventListener("touchmove", handleTouchMove);
+        container.removeEventListener("touchend", handleTouchEnd);
       }
-    }
-  }, [currentSection])
+    };
+  }, [currentSection]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault()
+        e.preventDefault();
 
-        if (!scrollContainerRef.current) return
+        if (!scrollContainerRef.current) return;
 
         scrollContainerRef.current.scrollBy({
           left: e.deltaY,
           behavior: "instant",
-        })
+        });
 
-        const sectionWidth = scrollContainerRef.current.offsetWidth
-        const newSection = Math.round(scrollContainerRef.current.scrollLeft / sectionWidth)
+        const sectionWidth = scrollContainerRef.current.offsetWidth;
+        const newSection = Math.round(
+          scrollContainerRef.current.scrollLeft / sectionWidth
+        );
         if (newSection !== currentSection) {
-          setCurrentSection(newSection)
+          setCurrentSection(newSection);
         }
       }
-    }
+    };
 
-    const container = scrollContainerRef.current
+    const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: false })
+      container.addEventListener("wheel", handleWheel, { passive: false });
     }
 
     return () => {
       if (container) {
-        container.removeEventListener("wheel", handleWheel)
+        container.removeEventListener("wheel", handleWheel);
       }
-    }
-  }, [currentSection])
+    };
+  }, [currentSection]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollThrottleRef.current) return
+      if (scrollThrottleRef.current) return;
 
       scrollThrottleRef.current = requestAnimationFrame(() => {
         if (!scrollContainerRef.current) {
-          scrollThrottleRef.current = undefined
-          return
+          scrollThrottleRef.current = undefined;
+          return;
         }
 
-        const sectionWidth = scrollContainerRef.current.offsetWidth
-        const scrollLeft = scrollContainerRef.current.scrollLeft
-        const newSection = Math.round(scrollLeft / sectionWidth)
+        const sectionWidth = scrollContainerRef.current.offsetWidth;
+        const scrollLeft = scrollContainerRef.current.scrollLeft;
+        const newSection = Math.round(scrollLeft / sectionWidth);
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 1) {
-          setCurrentSection(newSection)
+        if (
+          newSection !== currentSection &&
+          newSection >= 0 &&
+          newSection <= 1
+        ) {
+          setCurrentSection(newSection);
         }
 
-        scrollThrottleRef.current = undefined
-      })
-    }
+        scrollThrottleRef.current = undefined;
+      });
+    };
 
-    const container = scrollContainerRef.current
+    const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener("scroll", handleScroll, { passive: true })
+      container.addEventListener("scroll", handleScroll, { passive: true });
     }
 
     return () => {
       if (container) {
-        container.removeEventListener("scroll", handleScroll)
+        container.removeEventListener("scroll", handleScroll);
       }
       if (scrollThrottleRef.current) {
-        cancelAnimationFrame(scrollThrottleRef.current)
+        cancelAnimationFrame(scrollThrottleRef.current);
       }
-    }
-  }, [currentSection])
+    };
+  }, [currentSection]);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
+    e.preventDefault();
+    if (!email) return;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
       // Simulate API call - replace with your actual endpoint
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      setSubmitMessage("Thanks for joining! Check your email.")
-      setEmail("")
-      setTimeout(() => setSubmitMessage(""), 3000)
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setSubmitMessage("Thanks for joining! Check your email.");
+      setEmail("");
+      setTimeout(() => setSubmitMessage(""), 3000);
     } catch (error) {
-      setSubmitMessage("Something went wrong. Please try again.")
+      setSubmitMessage("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <main className="relative h-screen w-full overflow-hidden bg-background">
@@ -199,13 +214,15 @@ export default function Home() {
 
       <div
         ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`fixed inset-0 z-0 transition-opacity duration-700 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
         style={{ contain: "strict" }}
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#1275d8"
-            colorB="#e19136"
+            colorA="#001733"
+            colorB="#000000"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -217,11 +234,11 @@ export default function Home() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#0066ff"
-            upColor="#0066ff"
+            baseColor="#001733"
+            upColor="#001733"
             downColor="#d1d1d1"
-            leftColor="#e19136"
-            rightColor="#e19136"
+            leftColor="#bf115e"
+            rightColor="#bf115e"
             intensity={0.9}
             radius={1.8}
             momentum={25}
@@ -243,23 +260,27 @@ export default function Home() {
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
             <Image
-              src="/images/design-mode/simple-icons--blockchaindotcom%201.png"
+              src="/icons/logo.png"
               alt="Xend Global"
               width={24}
               height={24}
               className="h-6 w-6"
             />
           </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Xend Global</span>
+          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">
+            Xend Global
+          </span>
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Products"].map((item, index) => (
+          {navTabs.map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
               className={`group relative font-sans text-sm font-medium transition-colors ${
-                currentSection === index ? "text-foreground" : "text-foreground/80 hover:text-foreground"
+                currentSection === index
+                  ? "text-foreground"
+                  : "text-foreground/80 hover:text-foreground"
               }`}
             >
               {item}
@@ -301,44 +322,38 @@ export default function Home() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-60 md:pt-40 md:pb-24"> *
-        {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
+        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-60 md:pt-40 md:pb-24">
+          {" "}
+          *
+          {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
           <div className="max-w-8xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">WebGL Powered Design</p>
+              <p className="font-mono text-xs text-foreground/90">
+                Stablecoin powered internet
+              </p>
             </div>
             <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
                 Seamless Cross-Chain Payments.
-                 <br />
+                <br />
                 Seconds, Not Hours.
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Move assets across blockchains instantly with low fees — no bridges, no complexity, just pure
-                interoperability.
+                Move assets across blockchains instantly with low fees — no
+                bridges, no complexity, just pure interoperability.
               </span>
             </p>
-            <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
-              <MagneticButton
-                size="lg"
-                variant="primary"
-                onClick={() => window.open("https://v0.app/templates/R3n0gnvYFbO", "_blank")}
-              >
-                Open in v0
-              </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(0)}>
-                View Demo
-              </MagneticButton>
-            </div>
 
             <form
               onSubmit={handleEmailSubmit}
               className="mt-12 max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400"
             >
               <div className="mb-3 inline-block rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md">
-                <p className="font-mono text-xs text-foreground/90">Join the Waitlist</p>
+                <p className="font-mono text-xs text-foreground/90">
+                  Join the Waitlist
+                </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <input
@@ -357,78 +372,18 @@ export default function Home() {
                   {isSubmitting ? "Joining..." : "Join"}
                 </button>
               </div>
-              {submitMessage && <p className="mt-2 font-mono text-sm text-foreground/80">{submitMessage}</p>}
+              {submitMessage && (
+                <p className="mt-2 font-mono text-sm text-foreground/80">
+                  {submitMessage}
+                </p>
+              )}
             </form>
           </div>
-
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500"></div>
         </section>
 
         {/* Products Section */}
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-center px-6 py-24 md:px-12">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <h2 className="font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl">
-                <span className="text-balance">Our Products</span>
-              </h2>
-              <p className="mt-4 max-w-2xl text-lg text-foreground/80">
-                Access our platform across all your devices with our mobile app and browser extension.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* Mobile App Card */}
-              <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-100">
-                <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-foreground/5">
-                  <Image
-                    src="/mobile-app-interface.png"
-                    alt="Mobile App"
-                    width={200}
-                    height={300}
-                    className="h-full w-auto object-contain"
-                  />
-                </div>
-                <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground">Mobile App</h3>
-                <p className="mb-6 text-foreground/80">
-                  Manage your cross-chain payments on the go with our native mobile application.
-                </p>
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <button className="flex-1 rounded-lg bg-foreground px-4 py-3 font-sans font-semibold text-background transition-all duration-300 hover:bg-foreground/90">
-                    Download iOS
-                  </button>
-                  <button className="flex-1 rounded-lg border border-foreground/30 px-4 py-3 font-sans font-semibold text-foreground transition-all duration-300 hover:bg-foreground/10">
-                    Download Android
-                  </button>
-                </div>
-              </div>
-
-              {/* Browser Extension Card */}
-              <div className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-8 backdrop-blur-md duration-700 delay-200">
-                <div className="mb-6 flex h-48 items-center justify-center rounded-lg bg-foreground/5">
-                  <Image
-                    src="/browser-extension-interface.jpg"
-                    alt="Browser Extension"
-                    width={300}
-                    height={300}
-                    className="h-full w-auto object-contain"
-                  />
-                </div>
-                <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground">Browser Extension</h3>
-                <p className="mb-6 text-foreground/80">
-                  Seamlessly integrate cross-chain payments into your browser for quick access.
-                </p>
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <button className="flex-1 rounded-lg bg-foreground px-4 py-3 font-sans font-semibold text-background transition-all duration-300 hover:bg-foreground/90">
-                    Add to Chrome
-                  </button>
-                  <button className="flex-1 rounded-lg border border-foreground/30 px-4 py-3 font-sans font-semibold text-foreground transition-all duration-300 hover:bg-foreground/10">
-                    Add to Edge
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* <ProductsSection /> */}
       </div>
 
       <style jsx global>{`
@@ -437,5 +392,5 @@ export default function Home() {
         }
       `}</style>
     </main>
-  )
+  );
 }
