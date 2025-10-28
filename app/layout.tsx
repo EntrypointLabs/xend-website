@@ -9,6 +9,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  themeColor: "#000000",
   title: {
     template: "%s | Xend Global",
     default: "Stablecoin powered internet | Xend Global",
@@ -57,10 +58,7 @@ export default function RootLayout({
         <meta name="msapplication-navbutton-color" content="#000000" />
 
         {/* For iOS Safari */}
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </Head>
       <body className={`font-sans antialiased`}>
         {children}
