@@ -322,7 +322,7 @@ export default function Home() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 md:pt-40 md:pb-24">
+        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-20 md:pt-40 md:pb-24">
           {" "}
           *
           {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
