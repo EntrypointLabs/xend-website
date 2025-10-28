@@ -8,6 +8,7 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { GrainOverlay } from "@/components/grain-overlay";
 import { useRef, useEffect, useState } from "react";
 import ProductsSection from "@/components/sections/products";
+import { submitWaitlist } from "@/app/api/waitlist/action";
 
 const navTabs: string[] = [
   // "Home",
@@ -195,13 +196,22 @@ export default function Home() {
 
     setIsSubmitting(true);
     try {
-      // Simulate API call - replace with your actual endpoint
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      setSubmitMessage("Thanks for joining! Check your email.");
-      setEmail("");
-      setTimeout(() => setSubmitMessage(""), 3000);
+      const formData = new FormData();
+      formData.append("email", email);
+
+      const result = await submitWaitlist(formData);
+
+      if (result.success) {
+        setSubmitMessage(result.message);
+        setEmail("");
+        setTimeout(() => setSubmitMessage(""), 3000);
+      } else {
+        setSubmitMessage(result.message);
+        setTimeout(() => setSubmitMessage(""), 3000);
+      }
     } catch (error) {
       setSubmitMessage("Something went wrong. Please try again.");
+      setTimeout(() => setSubmitMessage(""), 3000);
     } finally {
       setIsSubmitting(false);
     }
