@@ -204,16 +204,14 @@ export default function Home() {
       if (result.success) {
         setSubmitMessage(result.message);
         setEmail("");
-        setTimeout(() => setSubmitMessage(""), 3000);
       } else {
         setSubmitMessage(result.message);
-        setTimeout(() => setSubmitMessage(""), 3000);
       }
     } catch (error) {
       setSubmitMessage("Something went wrong. Please try again.");
-      setTimeout(() => setSubmitMessage(""), 3000);
     } finally {
       setIsSubmitting(false);
+      setTimeout(() => setSubmitMessage(""), 3000);
     }
   };
 
