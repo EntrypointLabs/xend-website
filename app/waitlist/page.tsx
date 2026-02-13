@@ -7,8 +7,8 @@ import { Shader, ChromaFlow, Swirl } from "shaders/react";
 import { CustomCursor } from "@/components/custom-cursor";
 import { GrainOverlay } from "@/components/grain-overlay";
 import { useRef, useEffect, useState } from "react";
-import ProductsSection from "@/components/sections/products";
 import { submitWaitlist } from "@/app/api/waitlist/action";
+// import "./waitlist.css";
 
 const navTabs: string[] = [
   // "Home",
@@ -216,15 +216,14 @@ export default function Home() {
   };
 
   return (
-    <main className="relative h-screen w-full overflow-hidden --bg-background">
+    <main className="relative h-screen w-full overflow-hidden --bg-background cursor-none">
       <CustomCursor />
       <GrainOverlay />
 
       <div
         ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
         style={{ contain: "strict" }}
       >
         <Shader className="h-full w-full">
@@ -258,9 +257,8 @@ export default function Home() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-opacity duration-700 md:px-12 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-opacity duration-700 md:px-12 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
       >
         <button
           onClick={() => scrollToSection(0)}
@@ -285,17 +283,15 @@ export default function Home() {
             <button
               key={item}
               onClick={() => scrollToSection(index)}
-              className={`group relative font-sans text-sm font-medium transition-colors ${
-                currentSection === index
-                  ? "text-foreground"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              className={`group relative font-sans text-sm font-medium transition-colors ${currentSection === index
+                ? "text-foreground"
+                : "text-foreground/80 hover:text-foreground"
+                }`}
             >
               {item}
               <span
-                className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
-                  currentSection === index ? "w-full" : "w-0 group-hover:w-full"
-                }`}
+                className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${currentSection === index ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
               />
             </button>
           ))}
@@ -324,9 +320,8 @@ export default function Home() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex  overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`relative z-10 flex  overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}

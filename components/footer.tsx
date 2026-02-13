@@ -45,7 +45,7 @@ export function Footer() {
               <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </motion.a>
             <motion.a
-              href="https://x.com"
+              href="https://x.com/xend_global"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 10 }}
@@ -57,7 +57,7 @@ export function Footer() {
               <X className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </motion.a>
             <motion.a
-              href="https://chrome.google.com/webstore"
+              href="/waitlist"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 10 }}
