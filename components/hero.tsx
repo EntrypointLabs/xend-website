@@ -18,9 +18,8 @@ export function Hero() {
         </div>
 
         <h1 className="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-[5.5rem] font-semibold tracking-[-0.04em] text-foreground mb-6 leading-[1.02]">
-          Spend money as you would,
-          <br />
-          <span className="text-muted-foreground">but faster.</span>
+          Money, 
+          <span className="text-muted-foreground"> but faster.</span>
         </h1>
 
         <p className="reveal reveal-delay-2 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">

@@ -1,399 +1,151 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
+import Link from "next/link"
+import { useState } from "react"
+import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react"
+import { submitWaitlist } from "@/app/api/waitlist/action"
 
-import Image from "next/image";
-import { Shader, ChromaFlow, Swirl } from "shaders/react";
-import { CustomCursor } from "@/components/custom-cursor";
-import { GrainOverlay } from "@/components/grain-overlay";
-import { useRef, useEffect, useState } from "react";
-import { submitWaitlist } from "@/app/api/waitlist/action";
-// import "./waitlist.css";
+type Status = "idle" | "submitting" | "success" | "error"
 
-const navTabs: string[] = [
-  // "Home",
-  // "Products"
-];
+export default function WaitlistPage() {
+  const [email, setEmail] = useState("")
+  const [status, setStatus] = useState<Status>("idle")
+  const [message, setMessage] = useState("")
 
-export default function Home() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [currentSection, setCurrentSection] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const touchStartY = useRef(0);
-  const touchStartX = useRef(0);
-  const shaderContainerRef = useRef<HTMLDivElement>(null);
-  const scrollThrottleRef = useRef<number | undefined>(undefined);
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email || status === "submitting") return
 
-  useEffect(() => {
-    const checkShaderReady = () => {
-      if (shaderContainerRef.current) {
-        const canvas = shaderContainerRef.current.querySelector("canvas");
-        if (canvas && canvas.width > 0 && canvas.height > 0) {
-          setIsLoaded(true);
-          return true;
-        }
-      }
-      return false;
-    };
+    setStatus("submitting")
+    setMessage("")
 
-    if (checkShaderReady()) return;
-
-    const intervalId = setInterval(() => {
-      if (checkShaderReady()) {
-        clearInterval(intervalId);
-      }
-    }, 100);
-
-    const fallbackTimer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 1500);
-
-    return () => {
-      clearInterval(intervalId);
-      clearTimeout(fallbackTimer);
-    };
-  }, []);
-
-  const scrollToSection = (index: number) => {
-    if (scrollContainerRef.current) {
-      const sectionWidth = scrollContainerRef.current.offsetWidth;
-      scrollContainerRef.current.scrollTo({
-        left: sectionWidth * index,
-        behavior: "smooth",
-      });
-      setCurrentSection(index);
-    }
-  };
-
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY;
-      touchStartX.current = e.touches[0].clientX;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(e.touches[0].clientY - touchStartY.current) > 10) {
-        e.preventDefault();
-      }
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const touchEndY = e.changedTouches[0].clientY;
-      const touchEndX = e.changedTouches[0].clientX;
-      const deltaY = touchStartY.current - touchEndY;
-      const deltaX = touchStartX.current - touchEndX;
-
-      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 1) {
-          scrollToSection(currentSection + 1);
-        } else if (deltaY < 0 && currentSection > 0) {
-          scrollToSection(currentSection - 1);
-        }
-      }
-    };
-
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("touchstart", handleTouchStart, {
-        passive: true,
-      });
-      container.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
-      });
-      container.addEventListener("touchend", handleTouchEnd, { passive: true });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("touchstart", handleTouchStart);
-        container.removeEventListener("touchmove", handleTouchMove);
-        container.removeEventListener("touchend", handleTouchEnd);
-      }
-    };
-  }, [currentSection]);
-
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-
-        if (!scrollContainerRef.current) return;
-
-        scrollContainerRef.current.scrollBy({
-          left: e.deltaY,
-          behavior: "instant",
-        });
-
-        const sectionWidth = scrollContainerRef.current.offsetWidth;
-        const newSection = Math.round(
-          scrollContainerRef.current.scrollLeft / sectionWidth
-        );
-        if (newSection !== currentSection) {
-          setCurrentSection(newSection);
-        }
-      }
-    };
-
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: false });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel);
-      }
-    };
-  }, [currentSection]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollThrottleRef.current) return;
-
-      scrollThrottleRef.current = requestAnimationFrame(() => {
-        if (!scrollContainerRef.current) {
-          scrollThrottleRef.current = undefined;
-          return;
-        }
-
-        const sectionWidth = scrollContainerRef.current.offsetWidth;
-        const scrollLeft = scrollContainerRef.current.scrollLeft;
-        const newSection = Math.round(scrollLeft / sectionWidth);
-
-        if (
-          newSection !== currentSection &&
-          newSection >= 0 &&
-          newSection <= 1
-        ) {
-          setCurrentSection(newSection);
-        }
-
-        scrollThrottleRef.current = undefined;
-      });
-    };
-
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll, { passive: true });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll);
-      }
-      if (scrollThrottleRef.current) {
-        cancelAnimationFrame(scrollThrottleRef.current);
-      }
-    };
-  }, [currentSection]);
-
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
     try {
-      const formData = new FormData();
-      formData.append("email", email);
-
-      const result = await submitWaitlist(formData);
+      const formData = new FormData()
+      formData.append("email", email)
+      const result = await submitWaitlist(formData)
 
       if (result.success) {
-        setSubmitMessage(result.message);
-        setEmail("");
+        setStatus("success")
+        setMessage(result.message)
+        setEmail("")
       } else {
-        setSubmitMessage(result.message);
+        setStatus("error")
+        setMessage(result.message)
       }
-    } catch (error) {
-      setSubmitMessage("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitMessage(""), 3000);
+    } catch {
+      setStatus("error")
+      setMessage("Something went wrong. Please try again.")
     }
-  };
+  }
 
   return (
-    <main className="relative h-screen w-full overflow-hidden --bg-background cursor-none">
-      <CustomCursor />
-      <GrainOverlay />
+    <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
+      <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none mask-[radial-gradient(60%_50%_at_50%_30%,#000_30%,transparent_80%)]" />
 
-      <div
-        ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        style={{ contain: "strict" }}
-      >
-        <Shader className="h-full w-full">
-          <Swirl
-            colorA="#001733"
-            colorB="#000000"
-            speed={0.8}
-            detail={0.8}
-            blend={50}
-            coarseX={40}
-            coarseY={40}
-            mediumX={40}
-            mediumY={40}
-            fineX={40}
-            fineY={40}
-          />
-          <ChromaFlow
-            baseColor="#001733"
-            upColor="#001733"
-            downColor="#d1d1d1"
-            leftColor="#bf115e"
-            rightColor="#bf115e"
-            intensity={0.9}
-            radius={1.8}
-            momentum={25}
-            maskType="alpha"
-            opacity={0.97}
-          />
-        </Shader>
-        {/* <div className="absolute inset-0 bg-black/20" /> */}
-      </div>
-
-      <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-opacity duration-700 md:px-12 ${isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-      >
-        <button
-          onClick={() => scrollToSection(0)}
-          className="flex items-center gap-2 transition-transform hover:scale-105"
+      <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-10">
+        <Link href="/" className="flex items-center gap-2 group">
+          <img src="/xend-global-logo.png" alt="Xend" className="w-7 h-6" />
+          <span className="font-semibold tracking-tight text-foreground">Xend</span>
+        </Link>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-            <Image
-              src="/icons/logo.png"
-              alt="Xend Global"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
-          </div>
-          <span className="font-sans text-xl font-semibold tracking-tight text-foreground">
-            Xend Global
-          </span>
-        </button>
+          <ArrowLeft className="w-4 h-4" />
+          Back to home
+        </Link>
+      </header>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {navTabs.map((item, index) => (
+      <section className="relative z-10 flex flex-col items-center justify-center px-4 pt-12 pb-24 md:pt-20">
+        <div className="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border shadow-[0_1px_2px_rgba(0,0,0,0.04)] mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 pulse-glow" />
+          <span className="text-xs font-medium text-muted-foreground tracking-wide">
+            Joining is by invite — get on the list
+          </span>
+        </div>
+
+        <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-foreground text-center max-w-3xl leading-[1.05] mb-6">
+          Be first in line for a dollar account.
+        </h1>
+
+        <p className="reveal reveal-delay-2 text-base sm:text-lg text-muted-foreground text-center max-w-xl mb-10 leading-relaxed">
+          Drop your email below. We&apos;ll let you in as soon as we open the doors — and only when there&apos;s something to share.
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="reveal reveal-delay-3 w-full max-w-md"
+        >
+          <div className="flex flex-col sm:flex-row gap-2 p-1.5 rounded-full bg-white border border-border shadow-[0_1px_3px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.04)]">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                if (status !== "idle") setStatus("idle")
+              }}
+              placeholder="you@example.com"
+              required
+              disabled={status === "submitting" || status === "success"}
+              className="flex-1 bg-transparent px-5 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-60"
+            />
             <button
-              key={item}
-              onClick={() => scrollToSection(index)}
-              className={`group relative font-sans text-sm font-medium transition-colors ${currentSection === index
-                ? "text-foreground"
-                : "text-foreground/80 hover:text-foreground"
-                }`}
+              type="submit"
+              disabled={status === "submitting" || status === "success"}
+              className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
             >
-              {item}
-              <span
-                className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${currentSection === index ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-              />
+              {status === "submitting" && <Loader2 className="w-4 h-4 animate-spin" />}
+              {status === "success" && <Check className="w-4 h-4" />}
+              {status === "idle" && <ArrowRight className="w-4 h-4" />}
+              {status === "error" && <ArrowRight className="w-4 h-4" />}
+              <span>
+                {status === "submitting"
+                  ? "Joining…"
+                  : status === "success"
+                  ? "You're in"
+                  : "Join waitlist"}
+              </span>
             </button>
+          </div>
+
+          {message && (
+            <p
+              className={`mt-4 text-sm text-center ${
+                status === "success" ? "text-emerald-600" : "text-muted-foreground"
+              }`}
+            >
+              {message}
+            </p>
+          )}
+        </form>
+
+        <div className="reveal reveal-delay-4 mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-2xl w-full">
+          {[
+            { title: "Early access", body: "We invite waitlist members first, in small batches." },
+            { title: "No spam", body: "One email when it&apos;s your turn. That&apos;s it." },
+            { title: "Easy out", body: "Unsubscribe any time. We won&apos;t take it personally." },
+          ].map((item) => (
+            <div key={item.title} className="bg-background p-6 text-center">
+              <p className="text-sm font-semibold text-foreground mb-1">{item.title}</p>
+              <p
+                className="text-xs text-muted-foreground leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: item.body }}
+              />
+            </div>
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="https://x.com/xend_global?s=21&t=Ao6XMtDMivk31gxweHcEsg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25"
-            aria-label="Follow us on X"
-          >
-            <svg
-              className="h-5 w-5 text-foreground"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.868 6.75h-3.308l7.732-8.835L2.882 2.25h6.6l4.888 6.469L18.244 2.25zM17.41 20.452h1.828L6.63 3.75H4.676l12.734 16.702z" />
-            </svg>
-          </a>
-        </div>
-      </nav>
-
-      <div
-        ref={scrollContainerRef}
-        data-scroll-container
-        className={`relative z-10 flex  overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {/* Hero Section */}
-        <section className="flex w-screen h-screen shrink-0 flex-col justify-center px-6 pb-16 pt-20 md:pt-40 md:pb-24">
-          {" "}
-          *
-          {/* <section className="flex min-h-screen shrink-0 flex-col justify-center pb-16 pt-32 md:pt-40 md:pb-24"> */}
-          <div className="max-w-8xl">
-            <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">
-                Stablecoin powered internet
-              </p>
-            </div>
-            <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
-              <span className="text-balance">
-                Payments Plugged into
-                <br />
-                The Internet
-              </span>
-            </h1>
-            <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
-              <span className="text-pretty">
-                Move assets across socials instantly with zero fees — no
-                complexity, just pure interoperability.
-              </span>
-            </p>
-
-            <form
-              onSubmit={handleEmailSubmit}
-              className="mt-12 max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400"
-            >
-              <div className="mb-3 inline-block rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md">
-                <p className="font-mono text-xs text-foreground/90">
-                  Join the Waitlist
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 rounded-lg border border-foreground/20 bg-foreground/10 px-4 py-3 font-sans text-foreground placeholder-foreground/50 backdrop-blur-md transition-all duration-300 focus:border-foreground/40 focus:bg-foreground/15 focus:outline-none focus:ring-2 focus:ring-foreground/20"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="rounded-lg bg-foreground px-6 py-3 font-sans font-semibold text-background transition-all duration-300 hover:bg-foreground/90 disabled:opacity-50"
-                >
-                  {isSubmitting ? "Joining..." : "Join"}
-                </button>
-              </div>
-              {submitMessage && (
-                <p className="mt-2 font-mono text-sm text-foreground/80">
-                  {submitMessage}
-                </p>
-              )}
-            </form>
-          </div>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-in fade-in duration-1000 delay-500"></div>
-        </section>
-
-        {/* Products Section */}
-        {/* <ProductsSection /> */}
-      </div>
-
-      <style jsx global>{`
-        div::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+        <a
+          href="/litepaper.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="reveal reveal-delay-5 mt-10 text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+        >
+          Read the litepaper while you wait →
+        </a>
+      </section>
     </main>
-  );
+  )
 }
