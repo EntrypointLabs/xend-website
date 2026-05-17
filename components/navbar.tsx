@@ -30,8 +30,7 @@ export function Navbar() {
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-5 md:px-8 h-16">
         <a href="/" className="flex items-center gap-2">
-          <img src="/xend-global-logo.png" alt="Xend" className="w-7 h-6" />
-          <span className="font-semibold text-foreground tracking-tight">Xend</span>
+          <img src="/logos/xend-lockup-black.svg" alt="Xend" className="w-full h-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

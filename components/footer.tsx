@@ -11,8 +11,7 @@ export function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <img src="/xend-global-logo.png" alt="Xend" className="w-6 h-5" />
-          <span className="text-sm font-semibold text-foreground tracking-tight">Xend</span>
+          <img src="/logos/xend-lockup-black.svg" alt="Xend" className="w-fit h-7" />
           <span className="text-xs text-muted-foreground ml-3">
             &copy; {new Date().getFullYear()} Xend Global, Inc.
           </span>
