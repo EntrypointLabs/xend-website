@@ -1,19 +1,12 @@
 "use client"
 
-import { Command } from "@/components/ui/command"
-import { Activity, BarChart3, Shield } from "lucide-react"
-
 import { motion, useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
-import { Coins, Zap, Bell, Wand2, Lock } from "lucide-react"
+import { Send, Download, CreditCard, Building2, Shield, Zap } from "lucide-react"
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.08 } },
 }
 
 const itemVariants = {
@@ -21,85 +14,63 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 }
 
-function SystemStatus() {
-  const [dots, setDots] = useState([true, true, true, false, true])
-
+function LiveBalance() {
+  const [amount, setAmount] = useState(2840.12)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDots((prev) => prev.map(() => Math.random() > 0.2))
-    }, 2000)
-    return () => clearInterval(interval)
+    const id = setInterval(() => {
+      setAmount((a) => +(a + Math.random() * 4).toFixed(2))
+    }, 2200)
+    return () => clearInterval(id)
   }, [])
-
   return (
-    <div className="flex items-center gap-2">
-      {dots.map((active, i) => (
-        <motion.div
-          key={i}
-          className={`w-2 h-2 rounded-full ${active ? "bg-accent" : "bg-secondary"}`}
-          animate={active ? { scale: [1, 1.2, 1] } : {}}
-          transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
-        />
-      ))}
+    <div className="mt-6 rounded-xl bg-surface-strong border border-border p-4">
+      <div className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">
+        Balance
+      </div>
+      <div className="flex items-baseline gap-1">
+        <span className="text-3xl font-semibold tracking-tight text-foreground tabular-nums">
+          ${amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+        </span>
+        <span className="text-sm text-muted-foreground">USD</span>
+      </div>
     </div>
   )
 }
 
-function KeyboardCommand() {
-  const [pressed, setPressed] = useState(false)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPressed(true)
-      setTimeout(() => setPressed(false), 200)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    null
-  )
-}
-
-function AnimatedChart() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  const points = [
-    { x: 0, y: 60 },
-    { x: 20, y: 45 },
-    { x: 40, y: 55 },
-    { x: 60, y: 30 },
-    { x: 80, y: 40 },
-    { x: 100, y: 15 },
+function ActivityRow() {
+  const items = [
+    { name: "@ada", note: "Coffee", amount: "−$4.20", color: "text-foreground" },
+    { name: "@kemi", note: "Rent split", amount: "+$650.00", color: "text-emerald-600" },
+    { name: "@dami", note: "Lunch", amount: "−$12.50", color: "text-foreground" },
   ]
-
-  const pathD = points.reduce((acc, point, i) => {
-    return i === 0 ? `M ${point.x} ${point.y}` : `${acc} L ${point.x} ${point.y}`
-  }, "")
-
   return (
-    <svg ref={ref} viewBox="0 0 100 70" className="w-full h-24">
-      <defs>
-        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgb(255,255,255)" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="rgb(255,255,255)" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      {isInView && (
-        <>
-          <path d={`${pathD} L 100 70 L 0 70 Z`} fill="url(#chartGradient)" className="opacity-50" />
-          <path d={pathD} fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="draw-line" />
-        </>
-      )}
-    </svg>
+    <div className="mt-6 rounded-xl bg-surface-strong border border-border divide-y divide-border overflow-hidden">
+      {items.map((it, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className="flex items-center justify-between px-4 py-3"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-semibold flex items-center justify-center">
+              {it.name[1].toUpperCase()}
+            </div>
+            <div>
+              <div className="text-sm font-medium text-foreground">{it.name}</div>
+              <div className="text-xs text-muted-foreground">{it.note}</div>
+            </div>
+          </div>
+          <div className={`text-sm font-semibold tabular-nums ${it.color}`}>{it.amount}</div>
+        </motion.div>
+      ))}
+    </div>
   )
 }
 
@@ -116,14 +87,14 @@ export function BentoGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-primary mb-4"
-            style={{ fontFamily: "var(--font-instrument-sans)" }}
-          >
-            Your X handle is now your bank account
+          <p className="text-xs uppercase tracking-[0.18em] font-semibold text-primary mb-3">
+            What you can do
+          </p>
+          <h2 className="text-3xl sm:text-5xl font-semibold text-foreground tracking-tight mb-4">
+            A checking account, faster.
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Send digital dollars to anyone on X, even if they haven&apos;t set up a wallet yet.
+          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+            Hold dollars, move them in seconds, pay anyone. Xend works the way money should.
           </p>
         </motion.div>
 
@@ -132,88 +103,82 @@ export function BentoGrid() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
         >
-          {/* Large card - USDC Payments */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 group relative p-6 rounded-2xl bg-card border border-border hover:border-secondary hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="md:col-span-2 group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
           >
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="p-2 rounded-lg bg-secondary w-fit mb-4">
-                  <Coins className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
+            <div className="p-2.5 rounded-lg bg-accent w-fit mb-5">
+              <Send className="w-5 h-5 text-primary" strokeWidth={1.75} />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-2 tracking-tight">Send in seconds, for cents.</h3>
+            <p className="text-muted-foreground leading-relaxed max-w-md">
+              Send dollars to anyone with a username — across the street or across the world. No wire numbers. No three-day waits.
+            </p>
+            <LiveBalance />
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+          >
+            <div className="p-2.5 rounded-lg bg-accent w-fit mb-5">
+              <Download className="w-5 h-5 text-primary" strokeWidth={1.75} />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2 tracking-tight">Receive from anywhere</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Share your handle. Get paid by anyone, in dollars, instantly. Funds land in your Account, ready to use.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+          >
+            <div className="p-2.5 rounded-lg bg-accent w-fit mb-5">
+              <Building2 className="w-5 h-5 text-primary" strokeWidth={1.75} />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2 tracking-tight">Fund from your bank</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Top up your Account from local currency through a virtual bank account. Your balance stays in dollars.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+          >
+            <div className="p-2.5 rounded-lg bg-accent w-fit mb-5">
+              <Shield className="w-5 h-5 text-primary" strokeWidth={1.75} />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground mb-2 tracking-tight">Yours alone</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Sign in with a passkey. No seed phrases to lose. Recovery built into the product, not bolted on.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="md:col-span-2 group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
+          >
+            <div className="flex items-start justify-between gap-6">
+              <div className="flex-1">
+                <div className="p-2.5 rounded-lg bg-accent w-fit mb-5">
+                  <Zap className="w-5 h-5 text-primary" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Pay in USDC, Stay in USDC</h3>
-                <p className="text-muted-foreground text-sm">
-                  Never worry about holding SOL for transaction fees again. Our platform allows you to settle gas fees directly in USDC. If you have a balance, you can send a payment. It's that simple!
+                <h3 className="text-xl font-semibold text-foreground mb-2 tracking-tight">Activity, not transactions.</h3>
+                <p className="text-muted-foreground leading-relaxed max-w-md">
+                  Every payment, in plain language. Who you paid, what for, when. The feed reads like a conversation, not a ledger.
                 </p>
               </div>
-              <SystemStatus />
+              <div className="hidden sm:block flex-1 max-w-sm">
+                <ActivityRow />
+              </div>
             </div>
-          </motion.div>
-
-          {/* Command Palette */}
-          <motion.div
-            variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-card border border-border hover:border-secondary hover:scale-[1.02] transition-all duration-300"
-          >
-            <div className="p-2 rounded-lg bg-secondary w-fit mb-4">
-              <Zap className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
+            <div className="sm:hidden">
+              <ActivityRow />
             </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">One-Tap Onboarding</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Forget seed phrases and complex setups. Sign in with your X account and our Smart Account technology instantly deploys a secure vault for your assets. You’re ready to move money in seconds.
-            </p>
-            <div className="flex items-center gap-2 text-accent text-sm">
-              
-              
-            </div>
-            
-            
-            <KeyboardCommand />
-          </motion.div>
-
-          {/* Analytics */}
-          <motion.div
-            variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-card border border-border hover:border-secondary hover:scale-[1.02] transition-all duration-300"
-          >
-            <div className="p-2 rounded-lg bg-secondary w-fit mb-4">
-              <Bell className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Identity-Linked Notifications</h3>
-            <p className="text-muted-foreground text-sm mb-4">Send funds to anyone, even if they aren’t on the platform yet. Our automated bot notifies the recipient on X immediately. Their funds wait securely in their social-linked vault until they’re ready to claim.</p>
-            <AnimatedChart />
-          </motion.div>
-
-          {/* Performance */}
-          <motion.div
-            variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-card border border-border hover:border-secondary hover:scale-[1.02] transition-all duration-300"
-          >
-            <div className="p-2 rounded-lg bg-secondary w-fit mb-4">
-              <Wand2 className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Context-Aware Toolbar</h3>
-            <p className="text-muted-foreground text-sm mb-4">Our Chromium app is built for X. When you visit a profile, the app wakes up, automatically identifying the recipient so you can go from "Reading" to "Sending" without typing a single character.</p>
-            
-            
-            
-            
-          </motion.div>
-
-          {/* Security */}
-          <motion.div
-            variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-card border border-border hover:border-secondary hover:scale-[1.02] transition-all duration-300"
-          >
-            <div className="p-2 rounded-lg bg-secondary w-fit mb-4">
-              <Lock className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-lg font-semibold text-primary mb-2">Smart Account Security</h3>
-            <p className="text-muted-foreground text-sm mb-4">Leverage the power of programmable wallets. Your assets are tied to your social identity, combining the ease of Web2 with the non-custodial security of Web3.</p>
-            
           </motion.div>
         </motion.div>
       </div>

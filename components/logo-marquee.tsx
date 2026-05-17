@@ -3,13 +3,11 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
-const logos = [
-  { name: "Ethereum", symbol: "ETH", logo: "/logo-eth.png" },
-  { name: "Solana", symbol: "SOL", logo: "/logo-sol.png" },
-  { name: "Sui", symbol: "SUI", logo: "/logo-sui.png" },
-  { name: "Polygon", symbol: "MATIC", logo: "/logo-polygon.png" },
-  { name: "Base", symbol: "BASE", logo: "/logo-base.png" },
-  { name: "Optimism", symbol: "OP", logo: "/logo-op.png" },
+const stats = [
+  { value: "Seconds", label: "Settlement time" },
+  { value: "Cents", label: "Cost per transfer" },
+  { value: "24/7", label: "Always on" },
+  { value: "USD", label: "Denominated" },
 ]
 
 export function LogoMarquee() {
@@ -17,42 +15,48 @@ export function LogoMarquee() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-16 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-10"
-      >
-        <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Supported Chains</p>
-      </motion.div>
+    <section ref={ref} className="relative py-20 border-y border-border bg-surface">
+      <div className="max-w-6xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.18em] font-semibold">
+            A dollar account, without the bank
+          </p>
+        </motion.div>
 
-      <div className="relative">
-        {/* Fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        {/* Marquee container */}
-        <div className="flex animate-marquee">
-          {[...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center min-w-[180px] h-20 mx-6 opacity-60 hover:opacity-100 transition-all duration-300"
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 12 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-background p-8 text-center"
             >
-              <div className="flex items-center gap-4 text-foreground">
-                <img
-                  src={logo.logo || "/placeholder.svg"}
-                  alt={logo.name}
-                  className="w-12 h-12 rounded-lg object-cover shadow-lg"
-                />
-                <div className="flex flex-col">
-                  <span className="font-semibold text-sm">{logo.name}</span>
-                  <span className="text-xs text-muted-foreground">{logo.symbol}</span>
-                </div>
+              <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-1">
+                {stat.value}
               </div>
-            </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
+                {stat.label}
+              </div>
+            </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground"
+        >
+          <span>Built on</span>
+          <img src="/logo-sol.png" alt="Solana" className="h-5 w-5 rounded" />
+          <span className="font-medium text-foreground">Solana</span>
+        </motion.div>
       </div>
     </section>
   )

@@ -13,37 +13,42 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#000000",
+  themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Xend Global",
-    default: "Stablecoin powered internet | Xend Global",
+    template: "%s | Xend",
+    default: "Xend — spend money as you would, but faster",
   },
-  description: "Stablecoin powered internet",
+  description:
+    "Hold dollars on your phone. Send them to anyone in seconds, for cents. Xend is a checking account for the internet.",
   keywords: [
     "Xend",
     "Xend Global",
-    "Stablecoin",
-    "Internet",
-    "Payments",
-    "Socials",
+    "dollar account",
+    "payments",
+    "money transfer",
+    "Africa fintech",
   ],
   openGraph: {
+    title: "Xend — spend money as you would, but faster",
+    description:
+      "Hold dollars on your phone. Send them to anyone in seconds, for cents.",
     images: "https://xend.global/images/og-image.png",
   },
   twitter: {
     card: "summary_large_image",
     site: "https://xend.global",
-    title: "Xend Global",
-    description: "Stablecoin powered internet | Xend Global",
+    title: "Xend",
+    description:
+      "Hold dollars on your phone. Send them to anyone in seconds, for cents.",
     images: [
       {
         url: "https://xend.global/images/og-image.png",
         width: 1080,
         height: 1080,
-        alt: "Xend Global",
+        alt: "Xend",
       },
     ],
     creator: "@xend_global",
@@ -59,13 +64,13 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         {/* For Chrome, Firefox OS, Opera and Vivaldi */}
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#ffffff" />
 
         {/* For Windows Phone */}
-        <meta name="msapplication-navbutton-color" content="#000000" />
+        <meta name="msapplication-navbutton-color" content="#ffffff" />
 
         {/* For iOS Safari */}
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </Head>
       <body className={`font-sans antialiased`}>
         <div className="noise-overlay" aria-hidden="true" />

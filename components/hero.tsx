@@ -1,17 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
-
-const avatars = [
-  "/professional-headshot-1.png",
-  "/professional-headshot-2.png",
-  "/professional-headshot-3.png",
-  "/professional-headshot-4.png",
-  "/professional-headshot-5.png",
-]
 
 const textRevealVariants = {
   hidden: { y: "100%" },
@@ -28,85 +20,89 @@ const textRevealVariants = {
 export function Hero() {
   const router = useRouter()
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card pointer-events-none" />
-
-      {/* Subtle radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-28 pb-12 overflow-hidden">
+      <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none [mask-image:radial-gradient(60%_50%_at_50%_30%,#000_30%,transparent_80%)]" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-8"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border shadow-sm mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-accent pulse-glow" />
-          <span className="text-sm text-muted-foreground">Now in Private Beta</span>
+          <span className="w-2 h-2 rounded-full bg-primary pulse-glow" />
+          <span className="text-xs font-medium text-muted-foreground tracking-wide">Private beta — joining is by invite</span>
         </motion.div>
 
-        {/* Headline with text mask animation */}
-        <h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-primary mb-6"
-          style={{ fontFamily: "var(--font-cal-sans), sans-serif" }}
-        >
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground mb-6 leading-[1.05]">
           <span className="block overflow-hidden">
-            <motion.span className="block font-manrope" variants={textRevealVariants} initial="hidden" animate="visible" custom={0}>
-              {"Click. Send. SOL."}
+            <motion.span className="block" variants={textRevealVariants} initial="hidden" animate="visible" custom={0}>
+              Spend money as you would,
             </motion.span>
           </span>
           <span className="block overflow-hidden">
             <motion.span
-              className="block text-muted-foreground"
+              className="block text-primary"
               variants={textRevealVariants}
               initial="hidden"
               animate="visible"
               custom={1}
             >
-              Payments, simplified socially.
+              but faster.
             </motion.span>
           </span>
         </h1>
 
-        {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          A powerful browser companion that turns every X profile into a payment destination. Send USDC and SOL without ever leaving your timeline.
+          Checking account for the internet, built for everyday life.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-20"
         >
           <Button
-            variant="default"
             size="lg"
-            className="shimmer-btn bg-primary text-primary-foreground hover:bg-primary/80 rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-primary/10 flex items-center gap-2"
+            className="shimmer-btn bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-7 h-12 text-base font-medium shadow-md shadow-primary/20 flex items-center gap-2"
             onClick={() => router.push("/waitlist")}
           >
-            Install app
+            Get started
             <ArrowRight className="w-4 h-4" />
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full px-8 h-12 text-base font-medium border-border text-foreground hover:bg-card hover:text-primary hover:border-secondary bg-transparent"
+          <a
+            href="/litepaper.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-7 h-12 rounded-full text-base font-medium border border-border bg-white text-foreground hover:border-primary/30 hover:text-primary transition-colors"
           >
-            View Demo
-          </Button>
+            Read the litepaper
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </motion.div>
 
-        {/* Social Proof */}
-
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="relative mx-auto max-w-md"
+        >
+          <div className="absolute -inset-8 bg-gradient-to-b from-primary/20 via-primary/5 to-transparent rounded-[3rem] blur-3xl" />
+          <div className="relative">
+            <img
+              src="/app-showcase-1-v2.png"
+              alt="Xend mobile app showing dollar balance and recent activity"
+              className="w-full h-auto drop-shadow-2xl"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   )

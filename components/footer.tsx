@@ -2,83 +2,92 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Chrome, MessageCircle, X } from "lucide-react"
+
+const linkGroups = [
+  {
+    label: "Product",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "How it works", href: "#how" },
+      { label: "Litepaper", href: "/litepaper.pdf", external: true },
+    ],
+  },
+  {
+    label: "Company",
+    links: [
+      { label: "Get started", href: "/waitlist" },
+      { label: "X / Twitter", href: "https://x.com/xend_global", external: true },
+    ],
+  },
+]
 
 export function Footer() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
-    <footer ref={ref} className="border-t border-border bg-background relative overflow-hidden rounded-t-[40px]">
-      {/* Large background text - responsive sizing */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none overflow-hidden w-full text-center">
+    <footer ref={ref} className="border-t border-border bg-surface relative overflow-hidden">
+      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 pointer-events-none w-full text-center select-none">
         <h2
-          className="font-bold leading-none whitespace-nowrap text-6xl sm:text-8xl lg:text-[15rem] xl:text-[250px]"
-          style={{
-            color: "rgba(255, 255, 255, 0.04)",
-            fontFamily: "var(--font-cal-sans)",
-          }}
+          className="font-semibold leading-none whitespace-nowrap text-[28vw] tracking-tighter"
+          style={{ color: "rgba(37, 99, 235, 0.04)" }}
         >
-          Xend Global
+          xend
         </h2>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-20 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 pt-20 pb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-center gap-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16"
         >
-          {/* Social Links - Vertical Stack */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <motion.a
-              href="https://discord.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-300 group"
-              title="Join Discord"
-            >
-              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </motion.a>
-            <motion.a
-              href="https://x.com/xend_global"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-300 group"
-              title="Follow on X"
-            >
-              <X className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </motion.a>
-            <motion.a
-              href="/waitlist"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-border text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-300 group"
-              title="Get on Chrome Store"
-            >
-              <Chrome className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </motion.a>
+          <div className="md:col-span-1">
+            <a href="/" className="flex items-center gap-2 mb-4">
+              <img src="/xend-global-logo.png" alt="Xend" className="w-8 h-7" />
+              <span className="font-semibold text-foreground tracking-tight text-lg">Xend</span>
+            </a>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Spend money as you would, but faster. A dollar account that lives on your phone.
+            </p>
           </div>
 
-          {/* Copyright */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xs text-muted-foreground text-center"
-          >
+          {linkGroups.map((group) => (
+            <div key={group.label}>
+              <p className="text-xs uppercase tracking-[0.18em] font-semibold text-foreground mb-4">
+                {group.label}
+              </p>
+              <ul className="space-y-3">
+                {group.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border"
+        >
+          <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Xend Global, Inc. All rights reserved.
-          </motion.p>
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Built on Solana.
+          </p>
         </motion.div>
       </div>
     </footer>
