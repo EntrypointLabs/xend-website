@@ -1,8 +1,5 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-
 const linkGroups = [
   {
     label: "Product",
@@ -22,30 +19,22 @@ const linkGroups = [
 ]
 
 export function Footer() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-
   return (
-    <footer ref={ref} className="border-t border-border bg-surface relative overflow-hidden">
-      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 pointer-events-none w-full text-center select-none">
+    <footer className="border-t border-border bg-surface relative overflow-hidden">
+      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 pointer-events-none w-full text-center select-none">
         <h2
-          className="font-semibold leading-none whitespace-nowrap text-[28vw] tracking-tighter"
-          style={{ color: "rgba(37, 99, 235, 0.04)" }}
+          className="font-semibold leading-none whitespace-nowrap text-[28vw] tracking-[-0.06em]"
+          style={{ color: "rgba(10, 10, 10, 0.03)" }}
         >
           xend
         </h2>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 pt-20 pb-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div className="md:col-span-1">
             <a href="/" className="flex items-center gap-2 mb-4">
-              <img src="/xend-global-logo.png" alt="Xend" className="w-8 h-7" />
+              <img src="/xend-global-logo.png" alt="Xend" className="w-7 h-6" />
               <span className="font-semibold text-foreground tracking-tight text-lg">Xend</span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -74,21 +63,14 @@ export function Footer() {
               </ul>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Xend Global, Inc. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Built on Solana.
-          </p>
-        </motion.div>
+          <p className="text-xs text-muted-foreground">Built on Solana.</p>
+        </div>
       </div>
     </footer>
   )
