@@ -41,8 +41,6 @@ export default function WaitlistPage() {
 
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
-      <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-      <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none mask-[radial-gradient(60%_50%_at_50%_30%,#000_30%,transparent_80%)]" />
 
       <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-10">
         <Link href="/" className="flex items-center gap-2 group">
@@ -78,7 +76,7 @@ export default function WaitlistPage() {
           onSubmit={handleSubmit}
           className="reveal reveal-delay-3 w-full max-w-md"
         >
-          <div className="flex flex-col sm:flex-row gap-2 p-1.5 rounded-full bg-white border border-border shadow-[0_1px_3px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.04)]">
+          <div className="flex flex-col sm:flex-row sm:gap-2 sm:p-1.5 sm:rounded-full sm:bg-white sm:border sm:border-border sm:shadow-[0_1px_3px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.04)] gap-3">
             <input
               type="email"
               value={email}
@@ -89,12 +87,12 @@ export default function WaitlistPage() {
               placeholder="you@example.com"
               required
               disabled={status === "submitting" || status === "success"}
-              className="flex-1 bg-transparent px-5 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-60"
+              className="flex-1 w-full bg-white border border-border rounded-full sm:border-0 sm:bg-transparent sm:shadow-none shadow-[0_1px_2px_rgba(0,0,0,0.04)] px-5 h-12 sm:h-auto sm:py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/20 sm:focus:border-0 disabled:opacity-60 transition-colors"
             />
             <button
               type="submit"
               disabled={status === "submitting" || status === "success"}
-              className="inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-6 h-12 sm:h-auto sm:py-3 w-full sm:w-auto rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
             >
               {status === "submitting" && <Loader2 className="w-4 h-4 animate-spin" />}
               {status === "success" && <Check className="w-4 h-4" />}

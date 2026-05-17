@@ -73,7 +73,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </Head>
       <body className={`font-sans antialiased`}>
-        <div className="noise-overlay" aria-hidden="true" />
         {children}
         <Analytics />
       </body>

@@ -1,7 +1,5 @@
 "use client"
 
-import { useReveal } from "@/hooks/use-reveal"
-
 const stats = [
   { value: "Seconds", label: "Settlement time" },
   { value: "Cents", label: "Cost per transfer" },
@@ -10,11 +8,9 @@ const stats = [
 ]
 
 export function LogoMarquee() {
-  const { ref, isVisible } = useReveal<HTMLDivElement>()
-
   return (
-    <section className="relative py-20 border-y border-border bg-surface">
-      <div ref={ref} className={`max-w-6xl mx-auto px-4 in-view ${isVisible ? "is-visible" : ""}`}>
+    <section className="relative py-20">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
           <p className="text-xs text-muted-foreground uppercase tracking-[0.18em] font-semibold">
             A dollar account, without the bank
@@ -24,10 +20,10 @@ export function LogoMarquee() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {stats.map((stat) => (
             <div key={stat.label} className="bg-background p-8 text-center">
-              <div className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-1">
+              <div className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
+              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground font-medium">
                 {stat.label}
               </div>
             </div>
