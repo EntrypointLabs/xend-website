@@ -121,12 +121,24 @@ const jsonLd = {
     },
     {
       "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}#app`,
       name: "Xend",
       operatingSystem: "iOS, Android",
       applicationCategory: "FinanceApplication",
+      applicationSubCategory: "Mobile Banking",
       description:
         "A checking account for the internet. Hold dollars, send and receive in seconds for cents, fund from your local bank.",
       url: SITE_URL,
+      featureList: [
+        "Hold a USD balance on your phone",
+        "Send money instantly by username, in seconds for cents",
+        "Receive dollars from anyone, anywhere",
+        "Fund your dollar account from local currency through a virtual bank account",
+        "Passkey sign-in — no seed phrases, no email-and-password leaks",
+        "Account recovery built into the product",
+        "Activity feed in plain language, not a transaction ledger",
+        "Built on Solana for instant settlement",
+      ],
       offers: {
         "@type": "Offer",
         price: "0",
@@ -135,39 +147,34 @@ const jsonLd = {
       publisher: { "@id": `${SITE_URL}#org` },
     },
     {
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "ItemList",
+      "@id": `${SITE_URL}#use-cases`,
+      name: "How to use Xend",
+      description:
+        "Three things you'll actually do with a Xend Account.",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: 3,
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "What is Xend?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Xend is a dollar account that lives on your phone. You hold dollars, send them to anyone by username in seconds for cents, receive money back the same way, and fund your account from local currency.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Hold dollars",
+          description:
+            "Your Balance lives on your phone, denominated in USD. Funded from local currency through a virtual bank account — held in dollars regardless of where it came from.",
         },
         {
-          "@type": "Question",
-          name: "How fast are transfers on Xend?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Transfers settle in seconds — not the three days a typical bank wire takes. The fee is cents, not the percentage points charged by traditional remittance services.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "Send & Receive",
+          description:
+            "Move dollars to anyone by username. No wire numbers, no three-day waits. Settles in seconds, for cents.",
         },
         {
-          "@type": "Question",
-          name: "Do I need a seed phrase to use Xend?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. You sign in with a passkey on your phone. There are no seed phrases to lose. Recovery is built into the product.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I fund my Xend account from my local bank?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. You fund your account from local currency through a virtual bank account. Your balance is held in dollars regardless of how it was funded.",
-          },
+          "@type": "ListItem",
+          position: 3,
+          name: "Yours, recoverable",
+          description:
+            "Sign in with a passkey on your phone. No seed phrases to memorise. Lose your phone, get back in — recovery is built into the product.",
         },
       ],
     },

@@ -4,6 +4,7 @@ import { Hero } from "@/components/hero"
 import { LogoMarquee } from "@/components/logo-marquee"
 import { BentoGrid } from "@/components/bento-grid"
 import { Pricing } from "@/components/pricing"
+import { UseCarousel } from "@/components/use-carousel"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -16,6 +17,7 @@ export default function Home() {
         <LogoMarquee />
         <BentoGrid />
         <Pricing />
+        <UseCarousel />
         <FinalCTA />
         <Footer />
       </main>
