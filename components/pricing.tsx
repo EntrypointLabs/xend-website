@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 const showcases = [
   { image: "/app-showcase-1-v2.png", label: "Your Account", description: "Hold dollars. See your Balance. At a glance." },
   { image: "/app-showcase-2.png", label: "Send & Receive", description: "Pay anyone with a username. Settle in seconds." },
@@ -28,7 +30,15 @@ export function Pricing() {
               <div className="relative w-full max-w-xs">
                 <div className="absolute -inset-6 bg-linear-to-b from-foreground/5 to-transparent rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] group-hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.18)] group-hover:-translate-y-1 transition-all duration-500">
-                  <img src={showcase.image} alt={showcase.label} className="w-full h-auto" />
+                  <Image
+                    src={showcase.image}
+                    alt={`Xend ${showcase.label} screen — ${showcase.description}`}
+                    width={600}
+                    height={1200}
+                    sizes="(max-width: 768px) 320px, 384px"
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
               <div className="mt-6 max-w-xs">

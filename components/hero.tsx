@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
@@ -45,9 +46,13 @@ export function Hero() {
         <div className="relative mx-auto max-w-[260px] sm:max-w-[300px]">
           <div className="absolute -inset-10 bg-linear-to-b from-foreground/5 to-transparent rounded-[3rem] blur-2xl" />
           <div className="relative">
-            <img
+            <Image
               src="/app-showcase-1-v2.png"
               alt="Xend mobile app showing dollar balance and recent activity"
+              width={600}
+              height={1200}
+              priority
+              sizes="(max-width: 640px) 260px, 300px"
               className="w-full h-auto"
             />
           </div>
