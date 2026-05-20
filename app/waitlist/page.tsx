@@ -86,7 +86,7 @@ export default function WaitlistPage() {
               placeholder="you@example.com"
               required
               disabled={status === "submitting" || status === "success"}
-              className="flex-1 w-full bg-white border border-border rounded-full sm:border-0 sm:bg-transparent sm:shadow-none shadow-[0_1px_2px_rgba(0,0,0,0.04)] px-5 h-12 sm:h-auto sm:py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/20 sm:focus:border-0 disabled:opacity-60 transition-colors"
+              className="flex-1 w-full bg-white border border-border rounded-full sm:border-0 sm:bg-transparent sm:shadow-none shadow-[0_1px_2px_rgba(0,0,0,0.04)] px-5 h-12 sm:h-auto sm:py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/20 sm:focus:border-0 disabled:opacity-60 transition-colors min-h-12"
             />
             <button
               type="submit"
