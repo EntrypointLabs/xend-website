@@ -86,6 +86,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      {
+        url: "/favicon-dark.ico",
+        sizes: "any",
+        media: "(prefers-color-scheme: dark)",
+      },
       { url: "/logos/xend-mark-black.svg", type: "image/svg+xml" },
     ],
     apple: "/logos/xend-mark-black.svg",
