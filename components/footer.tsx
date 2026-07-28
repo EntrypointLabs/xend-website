@@ -3,7 +3,6 @@
 const links = [
   { label: "Litepaper", href: "/litepaper.pdf", external: true },
   { label: "X / Twitter", href: "https://x.com/xend_global", external: true },
-  { label: "Get started", href: "/waitlist" },
   { label: "Terms of Service", href: "/legal/terms-of-service" },
   { label: "Privacy Policy", href: "/legal/privacy-policy" },
 ]
@@ -34,25 +33,23 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-6">
-          <p className="text-xs font-medium text-muted-foreground mb-3">
-            Disclaimers
-          </p>
-          <ol className="list-decimal list-outside pl-4 space-y-2 text-xs text-muted-foreground leading-relaxed">
-            <li>
-              Entrypoint Labs, Inc. is a financial technology company, not a
-              bank. Xend is a product built and operated by Entrypoint
-              Labs, Inc.
-            </li>
-            <li>
-              Your Xend Balance is not a deposit account at a bank chartered
-              by any government and is not insured by the FDIC or any other
-              deposit insurance scheme unless expressly stated otherwise in
-              the app.
-            </li>
-          </ol>
-        </div>
+      <div className="max-w-6xl mx-auto px-5 md:px-8 pb-6">
+        <p className="text-xs font-medium text-muted-foreground mb-3">
+          Disclaimers
+        </p>
+        <ol className="list-decimal list-outside pl-4 space-y-2 text-xs text-muted-foreground leading-relaxed">
+          <li>
+            Entrypoint Labs, Inc. is a financial technology company, not a
+            bank. Xend is a product built and operated by Entrypoint
+            Labs, Inc.
+          </li>
+          <li>
+            Your Xend Balance is not a deposit account at a bank chartered
+            by any government and is not insured by the FDIC or any other
+            deposit insurance scheme unless expressly stated otherwise in
+            the app.
+          </li>
+        </ol>
       </div>
     </footer>
   )
