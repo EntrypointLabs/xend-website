@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     "Xend Global",
   ],
   applicationName: "Xend",
-  authors: [{ name: "Xend Global, Inc." }],
-  creator: "Xend Global, Inc.",
-  publisher: "Xend Global, Inc.",
+  authors: [{ name: "Entrypoint Labs, Inc." }],
+  creator: "Entrypoint Labs, Inc.",
+  publisher: "Entrypoint Labs, Inc.",
   category: "finance",
   alternates: {
     canonical: "/",
@@ -108,7 +108,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}#org`,
-      name: "Xend Global, Inc.",
+      name: "Entrypoint Labs, Inc.",
       alternateName: "Xend",
       url: SITE_URL,
       logo: `${SITE_URL}/logos/xend-lockup-black.svg`,

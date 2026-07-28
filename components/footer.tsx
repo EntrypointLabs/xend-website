@@ -15,7 +15,7 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <img src="/logos/xend-lockup-black.svg" alt="Xend" className="w-fit h-7" />
           <span className="text-xs text-muted-foreground ml-3">
-            &copy; {new Date().getFullYear()} Xend Global, Inc.
+            &copy; {new Date().getFullYear()} Entrypoint Labs, Inc.
           </span>
         </div>
 
