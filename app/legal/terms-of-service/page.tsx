@@ -91,12 +91,15 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>6. Fees.</LegalLead> Xend is currently free to use — there
-        are no fees to hold a Balance, fund your account, or send money to
-        another Xend user. We may introduce fees in the future; if we do, we
-        will disclose them in the app before you complete an affected
-        transaction, and continued use of the Service after a fee takes
-        effect constitutes your acceptance of it.
+        <LegalLead>6. Fees.</LegalLead> Entrypoint Labs does not currently
+        charge a fee to hold a Balance, fund your account, or send money to
+        another Xend user. Sending or funding a transfer may still incur a
+        minimal network fee — typically a fraction of a cent — charged by
+        the Solana network itself to process the transaction, not by us. We
+        may introduce our own fees in the future; if we do, we will disclose
+        them in the app before you complete an affected transaction, and
+        continued use of the Service after a fee takes effect constitutes
+        your acceptance of it.
       </LegalSection>
 
       <LegalSection>

@@ -79,6 +79,14 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
+        <LegalLead>Waitlist information.</LegalLead> The xend.global website
+        also lets visitors who don&apos;t yet have the app join a waitlist
+        for early access. If you join the waitlist, we collect the email
+        address you submit and use it to send you a confirmation email and
+        to invite you to create an account when a spot opens up.
+      </LegalSection>
+
+      <LegalSection>
         <LegalLead>Communications.</LegalLead> If you contact us by email or
         on X using the details in Section 10, we see whatever information
         you choose to include in that message.
@@ -87,7 +95,8 @@ export default function Page() {
       <LegalSection>
         <LegalLead>3. How We Use Information.</LegalLead> We use the
         information described in Section 2 to: operate your account and
-        process transfers and funding requests; secure the Service and
+        process transfers and funding requests; confirm your spot on the
+        waitlist and invite you to create an account; secure the Service and
         prevent fraud, unauthorized access, and abuse; comply with
         applicable law; communicate with you about your account, security,
         or changes to the Service; and diagnose technical problems and
@@ -140,12 +149,14 @@ export default function Page() {
         transaction information for as long as your account is active, and
         for a reasonable period afterward as needed for security, fraud
         prevention, dispute resolution, or legal and financial recordkeeping
-        obligations. We retain server logs only as long as needed for
-        security and operational purposes, after which they are deleted or
-        aggregated in a way that no longer identifies a specific person.
-        Because transfers settle on the Solana blockchain, we cannot delete
-        the on-chain record of a completed transaction — that record exists
-        independently on a public, immutable ledger.
+        obligations. We retain your waitlist email address until you either
+        create an account or ask us to delete it, whichever comes first. We
+        retain server logs only as long as needed for security and
+        operational purposes, after which they are deleted or aggregated in
+        a way that no longer identifies a specific person. Because transfers
+        settle on the Solana blockchain, we cannot delete the on-chain
+        record of a completed transaction — that record exists independently
+        on a public, immutable ledger.
       </LegalSection>
 
       <LegalSection>
