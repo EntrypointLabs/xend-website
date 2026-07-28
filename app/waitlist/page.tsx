@@ -116,6 +116,18 @@ export default function WaitlistPage() {
               {message}
             </p>
           )}
+
+          <p className="mt-4 text-xs text-muted-foreground text-center">
+            By joining, you agree to our{" "}
+            <Link href="/legal/terms-of-service" className="underline underline-offset-2 hover:text-foreground">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link href="/legal/privacy-policy" className="underline underline-offset-2 hover:text-foreground">
+              Privacy Policy
+            </Link>
+            .
+          </p>
         </form>
 
         <div className="reveal reveal-delay-4 mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-2xl w-full">

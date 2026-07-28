@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 
 const navItems = [
-  { label: "Product", href: "#features" },
+  { label: "Product", href: "/#features" },
   { label: "Litepaper", href: "/litepaper.pdf", external: true },
 ]
 
