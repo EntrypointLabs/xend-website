@@ -16,11 +16,12 @@ export default function Page() {
       <LegalSection>
         This Terms of Service agreement (the <LegalLead>&quot;Agreement&quot;</LegalLead>) governs
         your access to and use of the website located at xend.global and its
-        subdomains (the <LegalLead>&quot;Site&quot;</LegalLead>), operated by Xend Global, Inc. (
-        <LegalLead>&quot;Xend,&quot;</LegalLead> <LegalLead>&quot;we,&quot;</LegalLead>{" "}
-        <LegalLead>&quot;us,&quot;</LegalLead> or <LegalLead>&quot;our&quot;</LegalLead>). By
-        accessing or using the Site, you agree to be bound by this Agreement.
-        If you do not agree, you should not access or use the Site.
+        subdomains (the <LegalLead>&quot;Site&quot;</LegalLead>), operated by Entrypoint Labs, Inc. (
+        <LegalLead>&quot;Entrypoint Labs,&quot;</LegalLead> <LegalLead>&quot;we,&quot;</LegalLead>{" "}
+        <LegalLead>&quot;us,&quot;</LegalLead> or <LegalLead>&quot;our&quot;</LegalLead>), the team
+        building Xend. By accessing or using the Site, you agree to be bound
+        by this Agreement. If you do not agree, you should not access or use
+        the Site.
       </LegalSection>
 
       <LegalSection>
@@ -68,13 +69,14 @@ export default function Page() {
       <LegalSection>
         <LegalLead>4. Intellectual Property.</LegalLead> All content on the
         Site, including text, graphics, logos, marks, icons, and the
-        underlying code and design, is owned by Xend or its licensors and is
-        protected by copyright, trademark, and other intellectual property
-        laws. <LegalLead>&quot;Xend&quot;</LegalLead> and associated logos and marks are
-        the property of Xend Global, Inc. Except as necessary to view the
-        Site in a standard web browser or to read our litepaper, you may not
-        copy, reproduce, modify, distribute, or create derivative works from
-        any part of the Site without our prior written permission.
+        underlying code and design, is owned by Entrypoint Labs or its
+        licensors and is protected by copyright, trademark, and other
+        intellectual property laws. <LegalLead>&quot;Xend&quot;</LegalLead> and associated
+        logos and marks are the property of Entrypoint Labs, Inc. Except as
+        necessary to view the Site in a standard web browser or to read our
+        litepaper, you may not copy, reproduce, modify, distribute, or
+        create derivative works from any part of the Site without our prior
+        written permission.
       </LegalSection>
 
       <LegalSection>
@@ -103,8 +105,8 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>7. Not a Bank; No Custody.</LegalLead> Xend Global, Inc. is
-        a software company. It is not a bank, and the Site does not
+        <LegalLead>7. Not a Bank; No Custody.</LegalLead> Entrypoint Labs, Inc.
+        is a software company. It is not a bank, and the Site does not
         currently offer accounts, hold funds, or process transactions. Any
         description of a future dollar account, balance, or transfer
         functionality on the Site or in our litepaper describes a product
@@ -117,16 +119,16 @@ export default function Page() {
         AVAILABLE,&quot; WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS,
         IMPLIED, OR STATUTORY, INCLUDING WITHOUT LIMITATION WARRANTIES OF
         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
-        NON-INFRINGEMENT. XEND DOES NOT WARRANT THAT THE SITE WILL BE
-        UNINTERRUPTED, ERROR-FREE, OR SECURE, OR THAT ANY INFORMATION ON THE
-        SITE IS ACCURATE, COMPLETE, OR CURRENT.
+        NON-INFRINGEMENT. ENTRYPOINT LABS DOES NOT WARRANT THAT THE SITE WILL
+        BE UNINTERRUPTED, ERROR-FREE, OR SECURE, OR THAT ANY INFORMATION ON
+        THE SITE IS ACCURATE, COMPLETE, OR CURRENT.
       </LegalSection>
 
       <LegalSection>
         <LegalLead>9. LIMITATION OF LIABILITY.</LegalLead> TO THE FULLEST
-        EXTENT PERMITTED BY LAW, XEND AND ITS OFFICERS, EMPLOYEES, AND
-        CONTRACTORS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
-        SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS,
+        EXTENT PERMITTED BY LAW, ENTRYPOINT LABS AND ITS OFFICERS,
+        EMPLOYEES, AND CONTRACTORS WILL NOT BE LIABLE FOR ANY INDIRECT,
+        INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS,
         DATA, OR GOODWILL, ARISING FROM OR RELATED TO YOUR ACCESS TO OR USE
         OF, OR INABILITY TO ACCESS OR USE, THE SITE, EVEN IF WE HAVE BEEN
         ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION APPLIES
@@ -153,7 +155,7 @@ export default function Page() {
 
       <LegalSection>
         <LegalLead>12. Governing Law.</LegalLead> This Agreement is governed
-        by the laws applicable in Xend Global, Inc.&apos;s place of
+        by the laws applicable in Entrypoint Labs, Inc.&apos;s place of
         establishment, without regard to conflict-of-laws principles. Any
         dispute arising from this Agreement or your use of the Site will be
         resolved under those laws.

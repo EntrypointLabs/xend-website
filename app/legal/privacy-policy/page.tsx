@@ -14,9 +14,10 @@ export default function Page() {
   return (
     <LegalPage title="Privacy Policy" lastUpdated="27th July 2026">
       <LegalSection>
-        This Privacy Policy explains how Xend Global, Inc. (
+        This Privacy Policy explains how Entrypoint Labs, Inc., the team
+        building Xend (
         <LegalLead>&quot;we,&quot;</LegalLead> <LegalLead>&quot;us,&quot;</LegalLead> or{" "}
-        <LegalLead>&quot;our&quot;</LegalLead>) handles information in connection with the
+        <LegalLead>&quot;our&quot;</LegalLead>), handles information in connection with the
         website located at xend.global (the <LegalLead>&quot;Site&quot;</LegalLead>). The Site is
         currently a pre-launch marketing site with a waitlist; once the Xend
         application itself is generally available, it will be governed by
@@ -26,8 +27,9 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>1. Who We Are.</LegalLead> Xend Global, Inc. is building
-        Xend, a dollar account for everyday life. This Site is informational
+        <LegalLead>1. Who We Are.</LegalLead> Entrypoint Labs, Inc. is the
+        team building Xend, a dollar account for everyday life. This Site is
+        informational
         and lets visitors join a waitlist for early access. The Site does
         not currently offer live accounts, does not process payments, and
         does not custody funds.
