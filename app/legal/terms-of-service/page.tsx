@@ -60,7 +60,7 @@ export default function Page() {
         passkey tied to your device rather than a password or seed phrase.
         You are responsible for keeping your device and passkey secure and
         for all activity that occurs through your account. Notify us
-        immediately at the contact details in Section 15 if you believe your
+        immediately at the contact details in Section 16 if you believe your
         account has been accessed without your permission. We are not
         liable for losses caused by your failure to keep your device or
         account credentials secure.
@@ -139,30 +139,44 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>10. Suspension and Termination.</LegalLead> We may
+        <LegalLead>10. Transaction Monitoring.</LegalLead> Although Xend does
+        not currently verify your identity as described in Section 4, we use
+        blockchain analytics tools to screen the on-chain transactions
+        associated with your account for exposure to sanctioned parties,
+        suspected money laundering, or other financial crime risk
+        indicators. If a transaction or account is flagged by this
+        screening, we may delay, decline, restrict, or freeze the
+        transaction or your account, and we may share the relevant account
+        and transaction information with our screening providers, law
+        enforcement, or regulators as required by law.
+      </LegalSection>
+
+      <LegalSection>
+        <LegalLead>11. Suspension and Termination.</LegalLead> We may
         suspend, limit, or terminate your access to the Service at any time,
         with or without notice, if we reasonably believe you have violated
         this Agreement, if required by law, or to protect the Service or
         other users from fraud or harm. You may stop using the Service and
         request closure of your account at any time using the contact
-        details in Section 15. Where legally permitted, we will make
+        details in Section 16. Where legally permitted, we will make
         reasonable efforts to help you withdraw any remaining Balance before
         or after closing your account, subject to any legal holds or
         ongoing investigations.
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>11. Third-Party Services.</LegalLead> The Service relies
+        <LegalLead>12. Third-Party Services.</LegalLead> The Service relies
         on and may link to third parties we do not operate, including the
         Solana network, banking or payment partners used to fund your
-        Balance, and destinations like our litepaper or social media. We do
-        not control and are not responsible for the content, security, or
-        practices of any third party, and using the Service does not imply
-        our endorsement of any linked destination.
+        Balance, our transaction screening providers, and destinations like
+        our litepaper or social media. We do not control and are not
+        responsible for the content, security, or practices of any third
+        party, and using the Service does not imply our endorsement of any
+        linked destination.
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>12. Intellectual Property.</LegalLead> All content that is
+        <LegalLead>13. Intellectual Property.</LegalLead> All content that is
         part of the Service, including text, graphics, logos, marks, icons,
         and the underlying code and design, is owned by Entrypoint Labs or
         its licensors and is protected by copyright, trademark, and other
@@ -174,7 +188,7 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>13. DISCLAIMER OF WARRANTIES.</LegalLead> THE SERVICE IS
+        <LegalLead>14. DISCLAIMER OF WARRANTIES.</LegalLead> THE SERVICE IS
         PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE,&quot; WITHOUT WARRANTIES OF ANY KIND,
         WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING WITHOUT LIMITATION
         WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
@@ -184,7 +198,7 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>14. LIMITATION OF LIABILITY.</LegalLead> TO THE FULLEST
+        <LegalLead>15. LIMITATION OF LIABILITY.</LegalLead> TO THE FULLEST
         EXTENT PERMITTED BY LAW, ENTRYPOINT LABS AND ITS OFFICERS,
         EMPLOYEES, AND CONTRACTORS WILL NOT BE LIABLE FOR ANY INDIRECT,
         INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS
@@ -200,7 +214,7 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>15. Contact.</LegalLead> Questions about this Agreement,
+        <LegalLead>16. Contact.</LegalLead> Questions about this Agreement,
         or requests related to your account, can be sent to us by email at{" "}
         <a
           href="mailto:support@xend.global"
@@ -221,7 +235,7 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>16. Changes to the Terms.</LegalLead> We may revise this
+        <LegalLead>17. Changes to the Terms.</LegalLead> We may revise this
         Agreement at any time by posting an updated version with a new
         &quot;Last Updated&quot; date. For material changes, we will make
         reasonable efforts to notify you in the app or by email before they
@@ -230,7 +244,7 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
-        <LegalLead>17. Governing Law.</LegalLead> This Agreement is governed
+        <LegalLead>18. Governing Law.</LegalLead> This Agreement is governed
         by the laws applicable in Entrypoint Labs, Inc.&apos;s place of
         establishment, without regard to conflict-of-laws principles. Any
         dispute arising from this Agreement or your use of the Service will

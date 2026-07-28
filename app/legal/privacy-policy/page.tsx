@@ -60,6 +60,16 @@ export default function Page() {
       </LegalSection>
 
       <LegalSection>
+        <LegalLead>Compliance and screening information.</LegalLead> We use
+        blockchain analytics tools to screen the on-chain transactions
+        associated with your account for exposure to sanctioned parties,
+        suspected money laundering, or other financial crime risk
+        indicators, as described in our Terms of Service. This screening
+        produces information about your account and transactions, such as a
+        risk flag or match against a watchlist.
+      </LegalSection>
+
+      <LegalSection>
         <LegalLead>Usage and log information.</LegalLead> Our hosting
         provider and app infrastructure generate standard logs for requests
         made to the Service, which may include an IP address, device and app
@@ -102,7 +112,9 @@ export default function Page() {
         Balance from a linked bank account or local payment method — those
         partners process the information necessary to complete a funding
         transaction under their own privacy practices, which we encourage
-        you to review when you connect a funding source. Transfers between
+        you to review when you connect a funding source. We also use
+        blockchain analytics providers to screen on-chain transactions for
+        compliance purposes, as described in Section 2. Transfers between
         Xend users settle on the Solana network, a public blockchain that we
         do not operate or control. Each of these third parties has its own
         privacy practices that this Policy does not cover.
@@ -113,7 +125,10 @@ export default function Page() {
         information. We may share information described in Section 2 with:
         service providers who help us operate the Service, such as hosting,
         email, and banking or payment partners, under obligations to
-        protect it; law enforcement or regulators where required by law or
+        protect it; our blockchain analytics and transaction screening
+        providers, so they can screen your account and transactions as
+        described in Section 2; law enforcement or regulators where
+        required by law, where a screening provider flags a transaction, or
         to investigate fraud, security incidents, or violations of our
         Terms of Service; and another party in connection with a merger,
         acquisition, or sale of assets, subject to that party&apos;s
