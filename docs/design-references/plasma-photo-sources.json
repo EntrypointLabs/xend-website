@@ -1,0 +1,541 @@
+{
+  "sourcePage": "https://www.plasma.org/personal",
+  "acquired": "2026-10-14",
+  "usage": "Local faithful globe study requested by the user",
+  "assets": [
+    {
+      "index": 0,
+      "local": "/prydd/globe/photo-00.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "7769a9e183cbbd134b2e8f53ce9e658cbf2417ebb9378a5283efc7bc48632eb8"
+    },
+    {
+      "index": 1,
+      "local": "/prydd/globe/photo-01.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-1.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "57bbd74ec4887ef0f5e01b7d00a70c40455c3bcfb2fd206761d6f04c129f124e"
+    },
+    {
+      "index": 2,
+      "local": "/prydd/globe/photo-02.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-2.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "48737ebdc2033319c61d7e8e560ef4c4b191d051d4c484c72e0c94a62b6ae115"
+    },
+    {
+      "index": 3,
+      "local": "/prydd/globe/photo-03.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-3.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "322b031e2fc2f6a3f3f6d6c00affeb18ea8768b1d3d253f8f9186b6805ab7489"
+    },
+    {
+      "index": 4,
+      "local": "/prydd/globe/photo-04.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-4.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "76dd80344c441e21fecf7ad48db0d24b0f056416e2918363b271a9da78369ca6"
+    },
+    {
+      "index": 5,
+      "local": "/prydd/globe/photo-05.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-5.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "beea8e9d90803866dbedcbc929a57c019ce53227ef2f6f1036d0e34234cf4fc4"
+    },
+    {
+      "index": 6,
+      "local": "/prydd/globe/photo-06.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-6.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "0ea6eb01f7c854b462ff6facc5252993caf46c80a519a15e90aa7fe57d8bd5ba"
+    },
+    {
+      "index": 7,
+      "local": "/prydd/globe/photo-07.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-7.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "91e310af66e3a8795bd485e784ce2d0cba8faa4297eedf5cda1256e1d1ea624f"
+    },
+    {
+      "index": 8,
+      "local": "/prydd/globe/photo-08.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-8.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "0d3ce1211cb4e7defdbe43f2940a0c4571ddbf8541f6916df0cb975696838aca"
+    },
+    {
+      "index": 9,
+      "local": "/prydd/globe/photo-09.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-9.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "08cbed78362eae3a510578e121e23fd7973bd1d727412b9c3e0212f38c9d9a0e"
+    },
+    {
+      "index": 10,
+      "local": "/prydd/globe/photo-10.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-10.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8bafeedde895c99f8583d4ab95bebbcf34604883e109aab3d5ee0d3faf85c4a8"
+    },
+    {
+      "index": 11,
+      "local": "/prydd/globe/photo-11.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-11.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "1a0fa5e69d4c72e79b9b68c3b39537f6919e2252652c7b6cec331047f44f9c9a"
+    },
+    {
+      "index": 12,
+      "local": "/prydd/globe/photo-12.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-12.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "cadc397634b21e6053b65504b1bd6ca0eec2dc351a52f77d2a7c329306a8c472"
+    },
+    {
+      "index": 13,
+      "local": "/prydd/globe/photo-13.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-13.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8b059d700f1f0f450b731005f00920701c86ea02dc7db3f10b2b91731e30836f"
+    },
+    {
+      "index": 14,
+      "local": "/prydd/globe/photo-14.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-14.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "7bb85f5ec40484dde49da9c94b9e108d8bfb0fcbf2d66fdb0b8fe1a98f30b4da"
+    },
+    {
+      "index": 15,
+      "local": "/prydd/globe/photo-15.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-15.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "1d7aa86cfc03f64430ee5d32c57bbc9552e4fc7c3c907c30e58998220c8ad390"
+    },
+    {
+      "index": 16,
+      "local": "/prydd/globe/photo-16.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-16.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "bce61446bc02681360bf231c4d8803b8e45e4a971db6bd3bbca8669df5532e6f"
+    },
+    {
+      "index": 17,
+      "local": "/prydd/globe/photo-17.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-17.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "c0205cb85a37d88b95305f67b4a572318e8ca8ef8dc38ee8fa54809276122ae0"
+    },
+    {
+      "index": 18,
+      "local": "/prydd/globe/photo-18.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-18.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "55becf90b3a7bcdddd0977a2b22ae59fd3d2c8eb9929e91e8bec7454d861f677"
+    },
+    {
+      "index": 19,
+      "local": "/prydd/globe/photo-19.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-19.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "25b37781de70963c8efa11342c907e1cad94bb0fc8edc5c842ba376cbb17196f"
+    },
+    {
+      "index": 20,
+      "local": "/prydd/globe/photo-20.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-20.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "804163baac08c0a716c08293c9300b3613bc434a89920676131dbcb3020a9d65"
+    },
+    {
+      "index": 21,
+      "local": "/prydd/globe/photo-21.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-21.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "95341372abbbf53e0619d9513e368d16dbc67a954e361f74387f517edcc99040"
+    },
+    {
+      "index": 22,
+      "local": "/prydd/globe/photo-22.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-22.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "1425fd1187d2e99de9293f40b0ddea922ac0493922e1bc514063b325f47afd11"
+    },
+    {
+      "index": 23,
+      "local": "/prydd/globe/photo-23.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-23.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "11888e861054e3f6558619b6bf7ff39516d7fd52a2e20fb5a60720f0a672faff"
+    },
+    {
+      "index": 24,
+      "local": "/prydd/globe/photo-24.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-24.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "882807e771a4eff63dcadc5505b4fd1a8b5a5c9518cab79318ea60a13267301c"
+    },
+    {
+      "index": 25,
+      "local": "/prydd/globe/photo-25.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-25.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "60b334a309cf1a8ece92e056719d9ee44a820c971bf40040149fcf09004008f1"
+    },
+    {
+      "index": 26,
+      "local": "/prydd/globe/photo-26.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-26.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "7a774e99949db51cb83a7e1b4d1ba1ac206558645001fbdecc6c37a228f8fd19"
+    },
+    {
+      "index": 27,
+      "local": "/prydd/globe/photo-27.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-27.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "256c2d1ce9d42ac4c0d152a44cbd55ce48848f80315d5055fd675b2183f7b3b4"
+    },
+    {
+      "index": 28,
+      "local": "/prydd/globe/photo-28.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-28.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "ec6d3a61e38d4e55fef4efa3cc2aa7c93e8249f1637c4988a0ea0b7547b227d5"
+    },
+    {
+      "index": 29,
+      "local": "/prydd/globe/photo-29.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-29.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "3eae105fca9c179ee94a6493e04f360aacf361c0a420c96aa9c78049a73ed40d"
+    },
+    {
+      "index": 30,
+      "local": "/prydd/globe/photo-30.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-30.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8ff0d098896620cfbbf39e30e42a8f68c095e53e57bcbf1305e683d37b06050d"
+    },
+    {
+      "index": 31,
+      "local": "/prydd/globe/photo-31.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-31.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "7225b37a79e633bb5791f5494baa53434851026ac45808458b6bc2cf63a65745"
+    },
+    {
+      "index": 32,
+      "local": "/prydd/globe/photo-32.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-32.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "aff496d3ed18e63744ce6990544440c0676aad02fa533f7632699ad9aa17a2da"
+    },
+    {
+      "index": 33,
+      "local": "/prydd/globe/photo-33.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-33.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8c4b0e8b17dfc4e5814de4092472e8a73ecbd4f049d5382676cf1ced50c2728b"
+    },
+    {
+      "index": 34,
+      "local": "/prydd/globe/photo-34.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-34.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "08cbed78362eae3a510578e121e23fd7973bd1d727412b9c3e0212f38c9d9a0e"
+    },
+    {
+      "index": 35,
+      "local": "/prydd/globe/photo-35.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-35.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "e03599dee7fadf35f0a974400d18767841401a3afa294aa85bee9270fea419cb"
+    },
+    {
+      "index": 36,
+      "local": "/prydd/globe/photo-36.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-36.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "d58ba96f9cc01d6e81b9dea1e0c56cfd4035f8175bd1cd4407b898c6524a8692"
+    },
+    {
+      "index": 37,
+      "local": "/prydd/globe/photo-37.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-37.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "fe351cafa0b41fdd4f58de4f33e5d482fc8355445dc4802d1c5273241b8e381e"
+    },
+    {
+      "index": 38,
+      "local": "/prydd/globe/photo-38.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-38.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "4f71e9954761a964b604bce42208c65bf4f3175cea3a65a0e8a4f7f089344c45"
+    },
+    {
+      "index": 39,
+      "local": "/prydd/globe/photo-39.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-39.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "ea4ab6be2835288743bfb5c930b2ee19a50b51b3ffac3f50597f2cf76bb7db6f"
+    },
+    {
+      "index": 40,
+      "local": "/prydd/globe/photo-40.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-40.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "fd3b492009b21d6a5c2dd34f187cb8186b91d86b4f094d9b98dba1bf7c1b6123"
+    },
+    {
+      "index": 41,
+      "local": "/prydd/globe/photo-41.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-41.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "5930bddda9bd87202dde2fe223babdc9d19209cc9b871fc1fa448149e7f419ac"
+    },
+    {
+      "index": 42,
+      "local": "/prydd/globe/photo-42.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-42.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "3e3ae4ea041374bb330fb36bf98a2164e484faf7279e5d1f0420e5b9afee0407"
+    },
+    {
+      "index": 43,
+      "local": "/prydd/globe/photo-43.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-43.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "0f442af45459598b6e1e539fbbccaa048e9c46bac2af10faf9ac050ead86ca8e"
+    },
+    {
+      "index": 44,
+      "local": "/prydd/globe/photo-44.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-44.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "6240301efbbeda39d15fa150e18e58b7e349dc4484262be65f9f10570e6d105e"
+    },
+    {
+      "index": 45,
+      "local": "/prydd/globe/photo-45.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-45.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "da63592b36b2709fad226fb5ffad5dff29b1630552f40b31e87c6bba62357b04"
+    },
+    {
+      "index": 46,
+      "local": "/prydd/globe/photo-46.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-46.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "eae5bb6c0e16dd63f2f11bbfb39c5847331b860cd0db73dd0307a63d46c1278b"
+    },
+    {
+      "index": 47,
+      "local": "/prydd/globe/photo-47.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-47.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "ebf434b68810a8772bf5ee9c925286c933ae72741a1aabcfe4d0dff3fd18c0f8"
+    },
+    {
+      "index": 48,
+      "local": "/prydd/globe/photo-48.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-48.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "29736d67cee207135e9793bb6ee19f74cbdc894c34905e238eff260aba48945a"
+    },
+    {
+      "index": 49,
+      "local": "/prydd/globe/photo-49.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-49.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "b6a1cc9a843faabd0e1107cfb770ba94e5bb7b98e155d840200bb09cd577886d"
+    },
+    {
+      "index": 50,
+      "local": "/prydd/globe/photo-50.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-50.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "bf148ef92d43a1e2bea422769f717d508c75ffae100ad897cfc0e58562dd0459"
+    },
+    {
+      "index": 51,
+      "local": "/prydd/globe/photo-51.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-51.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "1ed18ebb107f3b9ff105ae347b0e42dc28d0cc0ceaef88cf25299ebf7f42698e"
+    },
+    {
+      "index": 52,
+      "local": "/prydd/globe/photo-52.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-52.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "08cbed78362eae3a510578e121e23fd7973bd1d727412b9c3e0212f38c9d9a0e"
+    },
+    {
+      "index": 53,
+      "local": "/prydd/globe/photo-53.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-53.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "a2ad43e11e38edc98d1b05930ea6556960181dd4013b4edcce2fa94d121cc6c2"
+    },
+    {
+      "index": 54,
+      "local": "/prydd/globe/photo-54.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-54.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "7e4cc1c73b8dc41ff4ba81e18a71b9c0642a5dc446b0ff5e9b2266d5c234b35e"
+    },
+    {
+      "index": 55,
+      "local": "/prydd/globe/photo-55.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-55.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "d82b9b163c7646877d93c21296b498936a82d3680965771a2f01c9d6c4119f8a"
+    },
+    {
+      "index": 56,
+      "local": "/prydd/globe/photo-56.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-56.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "b98b17dbd9cf6ba540cc03c7ee5a5c02fe8f9b0d2f444801c0fa173f218ad1f9"
+    },
+    {
+      "index": 57,
+      "local": "/prydd/globe/photo-57.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-57.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "ab3bc5fff5579a8dc2bff80732946d9a6917e90960036cad576ddcbfcc6a3dde"
+    },
+    {
+      "index": 58,
+      "local": "/prydd/globe/photo-58.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-58.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "d9388134dee1c10f792a5ba69678c711a13a05d51b7d2f52a64d9aa4b18bb48d"
+    },
+    {
+      "index": 59,
+      "local": "/prydd/globe/photo-59.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-59.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "94ee354c5a394c177c3619d18e90bed618031e445995c692cbcb599a0e1ec498"
+    },
+    {
+      "index": 60,
+      "local": "/prydd/globe/photo-60.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-60.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "c974e20367b48c317c250d8412e9122c7dab93ac7e383d0fc4331bf24ae5da9d"
+    },
+    {
+      "index": 61,
+      "local": "/prydd/globe/photo-61.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-61.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "6003147c73b87f5b62e3d0372188877982e20fd5c2cefb77d2919c8d7c855849"
+    },
+    {
+      "index": 62,
+      "local": "/prydd/globe/photo-62.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-62.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "b54d1c4ab2160c93188616a3c469b599a28053217f8e4ced3d89c04634c5ee19"
+    },
+    {
+      "index": 63,
+      "local": "/prydd/globe/photo-63.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-63.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "510e5c7fffff87bb1634175e9df1a6ad98c073fd2e674bb04f73422cdd48055e"
+    },
+    {
+      "index": 64,
+      "local": "/prydd/globe/photo-64.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-64.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "3bc4badd3eebe2db8d684db82d4e1939cd3ad0451ed1651c1de28c1b274d138d"
+    },
+    {
+      "index": 65,
+      "local": "/prydd/globe/photo-65.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-65.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8ddb7c9eb431b97a6661a8879953afdbfeb5ec6f94634e637333ec87c457e740"
+    },
+    {
+      "index": 66,
+      "local": "/prydd/globe/photo-66.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-66.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "90c62351ec635cb428bfef24a17a3a826ac75ef19f54f314f5c605d955e8cf74"
+    },
+    {
+      "index": 67,
+      "local": "/prydd/globe/photo-67.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-67.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "eb165c694a30c248bc92d977fd56af88d8ae1de7993d88f35a2b5440d585e26b"
+    },
+    {
+      "index": 68,
+      "local": "/prydd/globe/photo-68.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-68.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "e9a793f9533eea98f689c7890e401873294505f2209f0b2ecafe1c8f8a58b395"
+    },
+    {
+      "index": 69,
+      "local": "/prydd/globe/photo-69.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-69.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "1fcbd48024aae9617ed1d1cd7f7849bf0e4b2418766889cfd4912ebff88ab48f"
+    },
+    {
+      "index": 70,
+      "local": "/prydd/globe/photo-70.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-70.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "90b25ba01f869df8fffdc9ba417fbabfc295c683976fff65461d3ce54ba9f682"
+    },
+    {
+      "index": 71,
+      "local": "/prydd/globe/photo-71.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-71.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "38bddec4697ea2dc2c67cf8aef16d1998521d4ad05f9d0a1eedad3e5612018ac"
+    },
+    {
+      "index": 72,
+      "local": "/prydd/globe/photo-72.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-72.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "17114aa611171648d15db68278c2dab2f5a6499913c84c436ee0be0ab54013fe"
+    },
+    {
+      "index": 73,
+      "local": "/prydd/globe/photo-73.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-73.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "9ae658a1327db9d97d3d542df64ece58f318b6846baabf1cabde871aa5218c99"
+    },
+    {
+      "index": 74,
+      "local": "/prydd/globe/photo-74.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-74.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8338df2ca49a1e25376213b38de030a78b984c67ff7b82e084ca76ecc3e3685c"
+    },
+    {
+      "index": 75,
+      "local": "/prydd/globe/photo-75.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-75.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8f721e414d292ac8cae8e81194e4bd2da98feb5ac1da732dec77c285716d0b08"
+    },
+    {
+      "index": 76,
+      "local": "/prydd/globe/photo-76.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-76.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "64c55b61452f9838fc202f11e2a73a853edad3b62785a033d9467ff665eb7f55"
+    },
+    {
+      "index": 77,
+      "local": "/prydd/globe/photo-77.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-77.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "4dee98d341007399efba757bdf069f22348706876ca63ab4d99a564213833656"
+    },
+    {
+      "index": 78,
+      "local": "/prydd/globe/photo-78.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-78.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "83e9058a5e4f1e27e96a44c8925a228dc419ff897be24573ec08a559e8291a04"
+    },
+    {
+      "index": 79,
+      "local": "/prydd/globe/photo-79.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-79.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "93ab5a586f88ccd25857888e2b8371fc9f436827b07e4921e2df107c778c600b"
+    },
+    {
+      "index": 80,
+      "local": "/prydd/globe/photo-80.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-80.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "2eeb2db8a75a526c3ae82b4b5cdc3ab77a7dc9182b2c32aa26ff72044c0a5adb"
+    },
+    {
+      "index": 81,
+      "local": "/prydd/globe/photo-81.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-81.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8d62509d35c40fdf9b7f10508cd49261369b006f1f74de9c38071f5627a83ab8"
+    },
+    {
+      "index": 82,
+      "local": "/prydd/globe/photo-82.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-82.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "8028577b955649fa0060221c82521631efc4e0891b265c7827fbbc5bbcbfd2c8"
+    },
+    {
+      "index": 83,
+      "local": "/prydd/globe/photo-83.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-83.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "e31b7a0c673ba2c7d34916f4e0a90cf8439b8452300983056d5a269d6fbf5331"
+    },
+    {
+      "index": 84,
+      "local": "/prydd/globe/photo-84.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-84.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "b0bf12a03f7ba79e4363f70fec4436f4b24a977581839f7a4d0a130bbca8be06"
+    },
+    {
+      "index": 85,
+      "local": "/prydd/globe/photo-85.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-85.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "4f5bd7ecfef8db69518aa3679b069998f6f60c7f0a476f31ca5e2d6297b898ee"
+    },
+    {
+      "index": 86,
+      "local": "/prydd/globe/photo-86.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-86.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "54ddd5bf5588dc4320ea99115508d0062b6338376d553f146c66feab62a32afe"
+    },
+    {
+      "index": 87,
+      "local": "/prydd/globe/photo-87.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-87.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "5fcacb2d4c9571a7bc6e100436484de3958e91fe1de5bb522af23cbc8198d689"
+    },
+    {
+      "index": 88,
+      "local": "/prydd/globe/photo-88.avif",
+      "source": "https://www.plasma.org/_next/image?url=%2Fimages%2Fhome%2Fclosing-cta-pfp%2Fpfp-88.png&w=256&q=75&dpl=dpl_5KkWJMDoHngC2prVHrouUxynqoag",
+      "sha256": "ef108e38dc4d2ab468f6acd55b7d7d345739bb3ec04cfd44feff1900e6424c5e"
+    }
+  ]
+}

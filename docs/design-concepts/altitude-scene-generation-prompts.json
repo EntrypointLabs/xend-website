@@ -1,0 +1,39 @@
+{
+  "use_case": "photorealistic-natural",
+  "mode": "built-in image_gen",
+  "generated_at": "2026-10-14",
+  "reference": "docs/design-references/altitude-accounts-live.jpg",
+  "reference_role": "Atmosphere only: soft natural-light photographs behind layered white UI. New imagery generated without reference product UI or typography.",
+  "assets": [
+    {
+      "file": "public/prydd/landscape-sky.png",
+      "source_path": "/Users/gifted/.codex/generated_images/01a1397e-771b-7740-b46e-0f0f8895a7da/exec-5e226759-d2eb-46a5-8228-bba6bc7882ec.png",
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: understated photographic background behind layered white product UI on a quiet financial website.\nCreate a new landscape photograph in exact 4:3 aspect ratio, preferably 1536 by 1152 pixels. Photograph of a luminous soft blue sky with believable gently drifting clouds. Muted slate-to-pale blue across the upper portion, warm ivory and pale cream clouds in the lower half, softly lit by hazy late-afternoon daylight. Restrained low contrast, subtle natural photographic grain, atmospheric realism. The centre is softly open and visually quiet, enough softly lit empty area for white interface fragments to be placed over it later. Cropped sky only; no ground or scenery objects. Clouds should have real delicate vapor texture rather than graphic blobs. Contemporary understated editorial photography, soft focus atmospheric depth, no dramatic orange sunset.\nConstraints: photograph only, no product UI, no text, no letters, no numbers, no logos, no watermarks, no people, no money, no cards, no buildings, no illustration, no artificial gradient, no graphic shapes. Fill the entire image edge to edge.",
+      "inspection": "Visually inspected: natural photographic landscape, restrained contrast, quiet central space, no UI, text, logos or watermarks. Original tool output copied unchanged."
+    },
+    {
+      "file": "public/prydd/landscape-shore.png",
+      "source_path": "/Users/gifted/.codex/generated_images/01a1397e-771b-7740-b46e-0f0f8895a7da/exec-cf9f1841-1e55-4b2f-a192-5617efa4a908.png",
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: understated photographic background behind layered white product UI on a quiet financial website.\nCreate a new landscape photograph in exact 4:3 aspect ratio, preferably 1536 by 1152 pixels. A warm hazy shoreline in calm early-morning natural light: pale peach-cream sky occupies the upper two thirds, distant low ocean horizon, gentle glassy water and a little light beige sand along the bottom. The shore curves softly in from the lower right, without dramatic rocks, surf or foreground objects. Real photographic subtle water ripples and atmospheric haze, restrained low contrast and delicate warm tones, slightly defocused distant horizon. Keep the large central area softly lit and open, suitable for placing layered white UI fragments over it later. Contemporary understated editorial landscape photograph, peaceful everyday coastal atmosphere.\nConstraints: photograph only, no product UI, no text, no letters, no numbers, no logos, no watermarks, no people, no money, no cards, no boats, no buildings, no palm trees, no illustration, no artificial gradient, no graphic blobs. Fill the entire image edge to edge.",
+      "inspection": "Visually inspected: natural photographic landscape, restrained contrast, quiet central space, no UI, text, logos or watermarks. Original tool output copied unchanged."
+    },
+    {
+      "file": "public/prydd/landscape-field.png",
+      "source_path": "/Users/gifted/.codex/generated_images/01a1397e-771b-7740-b46e-0f0f8895a7da/exec-225f0e88-8a7b-4232-ad9e-f69545782393.png",
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "transparent_background": false,
+      "prompt": "Use case: photorealistic-natural.\nAsset type: understated photographic background behind layered white product UI on a quiet financial website.\nCreate a new landscape photograph in exact 4:3 aspect ratio, preferably 1536 by 1152 pixels. A pale green meadow under a softly luminous cream-blue sky in diffused natural daylight. Low rolling grassy horizon across the lower third, soft meadow grass with believable fine texture along the bottom, atmospheric distance and subtle lens softness. Airy subdued sage and muted light green, ivory clouds and pale blue sky, restrained low contrast. The centre and upper half remain spacious, softly lit and visually quiet, suitable for layering white interface fragments over it later. Contemporary understated editorial landscape photography; real meadow, gentle color and natural softness, no hyperreal polish.\nConstraints: photograph only, no product UI, no text, no letters, no numbers, no logos, no watermarks, no people, no money, no cards, no animals, no buildings, no fences, no bright flowers, no illustration, no artificial gradient, no graphic blobs. Fill the entire image edge to edge.",
+      "inspection": "Visually inspected: natural photographic landscape, restrained contrast, quiet central space, no UI, text, logos or watermarks. Original tool output copied unchanged."
+    }
+  ]
+}
